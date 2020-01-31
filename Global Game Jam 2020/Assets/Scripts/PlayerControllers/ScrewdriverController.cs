@@ -20,42 +20,8 @@ public class ScrewdriverController : MonoBehaviour
     private uint currentHeight;
     #endregion
 
-    void Start()
-    {
-        fromPosition = Vector3.zero;
-        toPosition = Vector3.zero;
-        timer = 0.0f;
-        interpolate = false;
-        currentHeight = 0;
-    }
-
     void Update()
     {
-        if (inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.DPad_up))
-        {
-            uint desiredHeight = currentHeight + 1;
-            if (desiredHeight >= 0 && desiredHeight < totalHeights)
-            {
-                fromPosition = transform.position;
-                toPosition = transform.position + new Vector3(0.0f, heightDistance, 0.0f);
-                timer = 0.0f;
-                interpolate = true;
-                currentHeight = desiredHeight;
-            }
-        }
-        else if (inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.Dpad_down))
-        {
-            uint desiredHeight = currentHeight - 1;
-            if (desiredHeight >= 0 && desiredHeight < totalHeights)
-            {
-                fromPosition = transform.position;
-                toPosition = transform.position - new Vector3(0.0f, heightDistance, 0.0f);
-                timer = 0.0f;
-                interpolate = true;
-                currentHeight = desiredHeight;
-            }
-        }
-
         if (interpolate)
         {
             float t = timer / interpolateSeconds;
@@ -68,6 +34,33 @@ public class ScrewdriverController : MonoBehaviour
             else
             {
                 timer += Time.deltaTime;
+            }
+        }
+        else
+        {
+            if (inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.DPad_up))
+            {
+                uint desiredHeight = currentHeight + 1;
+                if (desiredHeight >= 0 && desiredHeight < totalHeights)
+                {
+                    fromPosition = transform.position;
+                    toPosition = transform.position + new Vector3(0.0f, heightDistance, 0.0f);
+                    timer = 0.0f;
+                    interpolate = true;
+                    currentHeight = desiredHeight;
+                }
+            }
+            else if (inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.Dpad_down))
+            {
+                uint desiredHeight = currentHeight - 1;
+                if (desiredHeight >= 0 && desiredHeight < totalHeights)
+                {
+                    fromPosition = transform.position;
+                    toPosition = transform.position - new Vector3(0.0f, heightDistance, 0.0f);
+                    timer = 0.0f;
+                    interpolate = true;
+                    currentHeight = desiredHeight;
+                }
             }
         }
     }
