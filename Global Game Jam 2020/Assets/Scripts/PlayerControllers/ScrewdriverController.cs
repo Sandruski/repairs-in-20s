@@ -8,6 +8,8 @@ public class ScrewdriverController : MonoBehaviour
     public uint totalHeights;
     public float heightDistance;
     public float interpolateSeconds;
+
+    public InputManager inputManager;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -29,7 +31,7 @@ public class ScrewdriverController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.UpArrow))
+        if (inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.DPad_up))
         {
             uint desiredHeight = currentHeight + 1;
             if (desiredHeight >= 0 && desiredHeight < totalHeights)
@@ -41,7 +43,7 @@ public class ScrewdriverController : MonoBehaviour
                 currentHeight = desiredHeight;
             }
         }
-        else if (Input.GetKeyDown(KeyCode.DownArrow))
+        else if (inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.Dpad_down))
         {
             uint desiredHeight = currentHeight - 1;
             if (desiredHeight >= 0 && desiredHeight < totalHeights)

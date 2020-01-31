@@ -7,6 +7,8 @@ public class ObjectController : MonoBehaviour
     #region PUBLIC_VARIABLES
     public float rotateDegrees;
     public float interpolateSeconds;
+
+    public InputManager inputManager;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -26,14 +28,14 @@ public class ObjectController : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
+        if (inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.Dpad_left))
         {
             fromRotation = transform.rotation;
             toRotation = transform.rotation * Quaternion.AngleAxis(rotateDegrees, Vector3.up);
             timer = 0.0f;
             interpolate = true;
         }
-        else if (Input.GetKeyDown(KeyCode.RightArrow))
+        else if (inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.Dpad_right))
         {
             fromRotation = transform.rotation;
             toRotation = transform.rotation * Quaternion.AngleAxis(rotateDegrees, -Vector3.up);
