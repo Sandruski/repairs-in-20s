@@ -22,7 +22,7 @@ public class InputManager : MonoBehaviour
     private class Gamepad
     {
         public bool playerIndexSet;
-        public PlayerIndex playerIndex;
+        public PlayerIndex playerIndex = PlayerIndex.Four;
         public GamePadState state;
         public GamePadState prevState;
     }
@@ -40,25 +40,41 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
-        foreach (Gamepad gamepad in gamepads)
+        if (!gamepads[(int)Gamepads.Gamepad_1].playerIndexSet || !gamepads[(int)Gamepads.Gamepad_2].playerIndexSet)
         {
-            if (!gamepad.playerIndexSet || !gamepad.state.IsConnected)
+            QueryGamepads();
+        }
+
+        foreach (Gamepad gp in gamepads)
+        {
+            if (gp.playerIndexSet)
             {
-                for (int i = 0; i < 4; ++i)
+                gp.prevState = gp.state;
+                gp.state = GamePad.GetState(gp.playerIndex);
+            }
+        }
+    }
+
+    private void QueryGamepads()
+    {
+        for (int i = 0; i < 4; ++i)
+        {
+            PlayerIndex testPlayerIndex = (PlayerIndex)i;
+            GamePadState testState = GamePad.GetState(testPlayerIndex);
+            if (testState.IsConnected && testPlayerIndex != gamepads[(int)Gamepads.Gamepad_1].playerIndex
+                || testPlayerIndex != gamepads[(int)Gamepads.Gamepad_2].playerIndex)
+            {
+
+                foreach (Gamepad gp in gamepads)
                 {
-                    PlayerIndex testPlayerIndex = (PlayerIndex)i;
-                    GamePadState testState = GamePad.GetState(testPlayerIndex);
-                    if (testState.IsConnected)
+                    if (!gp.playerIndexSet)
                     {
-                        gamepad.playerIndex = testPlayerIndex;
-                        gamepad.playerIndexSet = true;
+                        gp.state = testState;
+                        gp.playerIndex = testPlayerIndex;
+                        gp.playerIndexSet = true;
+                        break;
                     }
                 }
-            }
-            else
-            {
-                gamepad.prevState = gamepad.state;
-                gamepad.state = GamePad.GetState(gamepad.playerIndex);
             }
         }
     }
@@ -83,11 +99,11 @@ public class InputManager : MonoBehaviour
                 break;
             case Buttons.DPad_up:
                 ret = gamepads[(int)gamepad].prevState.DPad.Up == ButtonState.Released
-                    && gamepads[(int)gamepad].state.DPad.Left == ButtonState.Pressed;
+                    && gamepads[(int)gamepad].state.DPad.Up == ButtonState.Pressed;
                 break;
             case Buttons.Dpad_down:
                 ret = gamepads[(int)gamepad].prevState.DPad.Down == ButtonState.Released
-                    && gamepads[(int)gamepad].state.DPad.Left == ButtonState.Pressed;
+                    && gamepads[(int)gamepad].state.DPad.Down == ButtonState.Pressed;
                 break;
             case Buttons.Dpad_left:
                 ret = gamepads[(int)gamepad].prevState.DPad.Left == ButtonState.Released
@@ -95,7 +111,7 @@ public class InputManager : MonoBehaviour
                 break;
             case Buttons.Dpad_right:
                 ret = gamepads[(int)gamepad].prevState.DPad.Right == ButtonState.Released
-                    && gamepads[(int)gamepad].state.DPad.Left == ButtonState.Pressed;
+                    && gamepads[(int)gamepad].state.DPad.Right == ButtonState.Pressed;
                 break;
         }
         return ret;
@@ -114,11 +130,11 @@ public class InputManager : MonoBehaviour
                 break;
             case Buttons.DPad_up:
                 ret = gamepads[(int)gamepad].prevState.DPad.Up == ButtonState.Pressed
-                    && gamepads[(int)gamepad].state.DPad.Left == ButtonState.Released;
+                    && gamepads[(int)gamepad].state.DPad.Up == ButtonState.Released;
                 break;
             case Buttons.Dpad_down:
                 ret = gamepads[(int)gamepad].prevState.DPad.Down == ButtonState.Pressed
-                    && gamepads[(int)gamepad].state.DPad.Left == ButtonState.Released;
+                    && gamepads[(int)gamepad].state.DPad.Down == ButtonState.Released;
                 break;
             case Buttons.Dpad_left:
                 ret = gamepads[(int)gamepad].prevState.DPad.Left == ButtonState.Pressed
@@ -126,7 +142,7 @@ public class InputManager : MonoBehaviour
                 break;
             case Buttons.Dpad_right:
                 ret = gamepads[(int)gamepad].prevState.DPad.Right == ButtonState.Pressed
-                    && gamepads[(int)gamepad].state.DPad.Left == ButtonState.Released;
+                    && gamepads[(int)gamepad].state.DPad.Right == ButtonState.Released;
                 break;
         }
         return ret;
