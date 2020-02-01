@@ -134,8 +134,8 @@ public class GameController : MonoBehaviour
                 {
                     objectBehaviour.RemoveHoles();
                     objectBehaviour.SpawnHoles();
+                    objectController.GetComponent<Rigidbody>().isKinematic = false;
                 }
-                objectController.GetComponent<Rigidbody>().isKinematic = false;
 
                 if (firstGame)
                 {
@@ -154,9 +154,9 @@ public class GameController : MonoBehaviour
         else
         {
             fromPosition1 = guide1.transform.position;
-            toPosition1 = new Vector3(guide1.transform.position.x, screwdriverController.heightDistance +1.0f, guide1.transform.position.z);
+            toPosition1 = new Vector3(guide1.transform.position.x, objectController.transform.position.y - objectBehaviour.size.y / 2.0f + screwdriverController.heightDistance, guide1.transform.position.z);
             fromPosition2 = guide2.transform.position;
-            toPosition2 = new Vector3(guide2.transform.position.x, screwdriverController.heightDistance +1.0f, guide2.transform.position.z);
+            toPosition2 = new Vector3(guide2.transform.position.x, objectController.transform.position.y - objectBehaviour.size.y / 2.0f + screwdriverController.heightDistance, guide2.transform.position.z);
             timer = 0.0f;
             interpolate = true;
         }
