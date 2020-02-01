@@ -81,8 +81,7 @@ public class ObjectBehaviour : MonoBehaviour
                         // Not forward!
                         continue;
                     }
-
-                    Debug.Log(size + "and" + transform.position + "and" + x + "or" + y + "or" + z);
+                    
                     Vector3 spawnPosition = transform.position - new Vector3(0.0f, size.y / 2.0f, 0.0f) + new Vector3(x, y, z);
                     Quaternion spawnRotation = Quaternion.identity;
                     if (z != 0.0f)

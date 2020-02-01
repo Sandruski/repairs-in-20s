@@ -122,10 +122,11 @@ public class GameController : MonoBehaviour
         if (interpolate)
         {
             float t = timer / screwdriverDownInterpolateSeconds;
-           // screwdriverController.transform.position = Vector3.Lerp(fromPosition, toPosition, t);
+            // screwdriverController.transform.position = Vector3.Lerp(fromPosition, toPosition, t);
 
-            guide1.transform.position = Vector3.Lerp(fromPosition1, toPosition1, t);
-            guide2.transform.position = Vector3.Lerp(fromPosition2, toPosition2, t);
+            Debug.Log("FROMPOS" + fromPosition1 + "TOPOS" + toPosition1);
+            guide1.transform.localPosition = Vector3.Lerp(fromPosition1, toPosition1, t);
+            guide2.transform.localPosition = Vector3.Lerp(fromPosition2, toPosition2, t);
 
             if (timer >= screwdriverDownInterpolateSeconds)
             {
@@ -153,10 +154,10 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            fromPosition1 = guide1.transform.position;
-            toPosition1 = new Vector3(guide1.transform.position.x, objectController.transform.position.y - objectBehaviour.size.y / 2.0f + screwdriverController.heightDistance, guide1.transform.position.z);
-            fromPosition2 = guide2.transform.position;
-            toPosition2 = new Vector3(guide2.transform.position.x, objectController.transform.position.y - objectBehaviour.size.y / 2.0f + screwdriverController.heightDistance, guide2.transform.position.z);
+            fromPosition1 = guide1.transform.localPosition;
+            toPosition1 = new Vector3(guide1.transform.localPosition.x, -0.58f, guide1.transform.localPosition.z);
+            fromPosition2 = guide2.transform.localPosition;
+            toPosition2 = new Vector3(guide2.transform.localPosition.x, -0.58f, guide2.transform.localPosition.z);
             timer = 0.0f;
             interpolate = true;
         }
