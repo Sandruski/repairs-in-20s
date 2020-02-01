@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -874,7 +874,7 @@ PrefabInstance:
     - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.45
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
@@ -924,17 +924,17 @@ PrefabInstance:
     - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.9031
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.9031
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.9031
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3265113319987675125, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
@@ -1040,15 +1040,50 @@ PrefabInstance:
       propertyPath: interpolateSeconds
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 7484195881142693414, guid: b84f3e666921d1748b9fbfda9f007d11,
+        type: 3}
+      propertyPath: redScrewdriver
+      value: 
+      objectReference: {fileID: 7484195882152650949}
+    - target: {fileID: 7484195881142693414, guid: b84f3e666921d1748b9fbfda9f007d11,
+        type: 3}
+      propertyPath: blueScrewdriver
+      value: 
+      objectReference: {fileID: 7484195882152650948}
+    - target: {fileID: 7484195881142693414, guid: b84f3e666921d1748b9fbfda9f007d11,
+        type: 3}
+      propertyPath: redLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484195881142693414, guid: b84f3e666921d1748b9fbfda9f007d11,
+        type: 3}
+      propertyPath: redHoleLayerMask.m_Bits
+      value: 256
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484195881142693414, guid: b84f3e666921d1748b9fbfda9f007d11,
+        type: 3}
+      propertyPath: blueHoleLayerMask.m_Bits
+      value: 512
+      objectReference: {fileID: 0}
     - target: {fileID: 7484195881142693415, guid: b84f3e666921d1748b9fbfda9f007d11,
         type: 3}
       propertyPath: m_Name
       value: Screwdriver
       objectReference: {fileID: 0}
+    - target: {fileID: 7484195881216423306, guid: b84f3e666921d1748b9fbfda9f007d11,
+        type: 3}
+      propertyPath: m_Name
+      value: BlueScrewdriver
+      objectReference: {fileID: 0}
     - target: {fileID: 7484195881216423309, guid: b84f3e666921d1748b9fbfda9f007d11,
         type: 3}
       propertyPath: m_LocalPosition.x
       value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484195881706736240, guid: b84f3e666921d1748b9fbfda9f007d11,
+        type: 3}
+      propertyPath: m_Name
+      value: RedScrewdriver
       objectReference: {fileID: 0}
     - target: {fileID: 7484195881706736244, guid: b84f3e666921d1748b9fbfda9f007d11,
         type: 3}
@@ -1057,3 +1092,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84f3e666921d1748b9fbfda9f007d11, type: 3}
+--- !u!1 &7484195882152650948 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7484195881216423306, guid: b84f3e666921d1748b9fbfda9f007d11,
+    type: 3}
+  m_PrefabInstance: {fileID: 7484195882152650947}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7484195882152650949 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7484195881706736240, guid: b84f3e666921d1748b9fbfda9f007d11,
+    type: 3}
+  m_PrefabInstance: {fileID: 7484195882152650947}
+  m_PrefabAsset: {fileID: 0}

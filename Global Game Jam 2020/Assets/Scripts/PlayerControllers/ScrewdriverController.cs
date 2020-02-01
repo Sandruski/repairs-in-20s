@@ -19,6 +19,8 @@ public class ScrewdriverController : MonoBehaviour
 
     public GameObject redScrewdriver;
     public GameObject blueScrewdriver;
+    public LayerMask redHoleLayerMask;
+    public LayerMask blueHoleLayerMask;
     #endregion
 
     #region PRIVATE_VARIABLES

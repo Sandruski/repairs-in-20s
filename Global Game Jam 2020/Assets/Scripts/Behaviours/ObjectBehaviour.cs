@@ -26,12 +26,17 @@ public class ObjectBehaviour : MonoBehaviour
 
     void SpawnHoles()
     {
+        bool hasSpawned = false;
+
         for (uint i = 0; i < height; ++i)
         {
             for (uint j = 0; j < 4; ++j)
             {
-                if (Random.value <= spawnProbability)
+                if (Random.value <= spawnProbability
+                    || (i == height - 1 && j == 3 && !hasSpawned))
                 {
+                    hasSpawned = true;
+
                     float halfHeightDistance = screwdriverController.heightDistance / 2.0f;
                     float y = height * halfHeightDistance;
 
