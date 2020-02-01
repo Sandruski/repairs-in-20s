@@ -62,28 +62,39 @@ public class ObjectBehaviour : MonoBehaviour
                     switch (j)
                     {
                         case 0:
-                            x = halfWidthDistance;
+                            x = halfWidthDistance; // left
                             break;
                         case 1:
-                            x = -halfWidthDistance;
+                            x = -halfWidthDistance; // right
                             break;
                         case 2:
-                            z = halfWidthDistance;
+                            z = halfWidthDistance; // forward
                             break;
                         case 3:
-                            z = -halfWidthDistance;
+                            z = -halfWidthDistance; // back
                             break;
                     }
 
+                    if (z == halfWidthDistance)
+                    {
+                        // Not forward!
+                        continue;
+                    }
+
                     Vector3 spawnPosition = transform.position - new Vector3(0.0f, size.y / 2.0f, 0.0f) + new Vector3(x, y, z);
+                    Quaternion spawnRotation = Quaternion.identity;
+                    if (z != 0.0f)
+                    {
+                        spawnRotation = Quaternion.AngleAxis(90.0f, Vector3.up);
+                    }
                     GameObject hole = null;
                     if (Random.value <= redProbability)
                     {
-                        hole = Instantiate(Resources.Load("RedHole") as GameObject, spawnPosition, Quaternion.identity, transform);
+                        hole = Instantiate(Resources.Load("RedHole") as GameObject, spawnPosition, spawnRotation, transform);
                     }
                     else
                     {
-                        hole = Instantiate(Resources.Load("BlueHole") as GameObject, spawnPosition, Quaternion.identity, transform);
+                        hole = Instantiate(Resources.Load("BlueHole") as GameObject, spawnPosition, spawnRotation, transform);
                     }
                     holes.Add(hole);
                 }

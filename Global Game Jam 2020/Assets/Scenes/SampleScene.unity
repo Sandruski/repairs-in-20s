@@ -286,11 +286,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bf6c9362f5ef645a5cb94c4f54b5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: 1
+  gameState: 0
   inputManager: {fileID: 151487967}
   screwdriverController: {fileID: 1171637989}
   objectController: {fileID: 1704243879}
   objectBehaviour: {fileID: 1922146905}
+  dollyMovement: {fileID: 848979511}
   objectInitialHeight: 6
   objectsRepaired: 0
   screwdriverDownInterpolateSeconds: 0.8
@@ -732,6 +733,7 @@ MonoBehaviour:
   objectController: {fileID: 1704243879}
   gameController: {fileID: 151487971}
   text: {fileID: 524308197}
+  dolly: {fileID: 0}
 --- !u!114 &453316653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2195,7 +2197,7 @@ PrefabInstance:
     - target: {fileID: 7484195881142693414, guid: b84f3e666921d1748b9fbfda9f007d11,
         type: 3}
       propertyPath: heightDistance
-      value: 0.25
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7484195881142693415, guid: b84f3e666921d1748b9fbfda9f007d11,
         type: 3}
