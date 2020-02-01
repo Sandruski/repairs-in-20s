@@ -12,6 +12,9 @@ public class InputManager : MonoBehaviour
     public enum Buttons
     {
         A = 0,
+        B,
+        X,
+        Y,
         DPad_up,
         Dpad_down,
         Dpad_left,
@@ -97,6 +100,18 @@ public class InputManager : MonoBehaviour
                 ret = gamepads[(int)gamepad].prevState.Buttons.A == ButtonState.Released
                     && gamepads[(int)gamepad].state.Buttons.A == ButtonState.Pressed;
                 break;
+            case Buttons.B:
+                ret = gamepads[(int)gamepad].prevState.Buttons.B == ButtonState.Released
+                    && gamepads[(int)gamepad].state.Buttons.B == ButtonState.Pressed;
+                break;
+            case Buttons.X:
+                ret = gamepads[(int)gamepad].prevState.Buttons.X == ButtonState.Released
+                    && gamepads[(int)gamepad].state.Buttons.X == ButtonState.Pressed;
+                break;
+            case Buttons.Y:
+                ret = gamepads[(int)gamepad].prevState.Buttons.Y == ButtonState.Released
+                    && gamepads[(int)gamepad].state.Buttons.Y == ButtonState.Pressed;
+                break;
             case Buttons.DPad_up:
                 ret = gamepads[(int)gamepad].prevState.DPad.Up == ButtonState.Released
                     && gamepads[(int)gamepad].state.DPad.Up == ButtonState.Pressed;
@@ -127,6 +142,18 @@ public class InputManager : MonoBehaviour
             case Buttons.A:
                 ret = gamepads[(int)gamepad].prevState.Buttons.A == ButtonState.Pressed
                     && gamepads[(int)gamepad].state.Buttons.A == ButtonState.Released;
+                break;
+            case Buttons.B:
+                ret = gamepads[(int)gamepad].prevState.Buttons.B == ButtonState.Pressed
+                    && gamepads[(int)gamepad].state.Buttons.B == ButtonState.Released;
+                break;
+            case Buttons.X:
+                ret = gamepads[(int)gamepad].prevState.Buttons.X == ButtonState.Pressed
+                    && gamepads[(int)gamepad].state.Buttons.X == ButtonState.Released;
+                break;
+            case Buttons.Y:
+                ret = gamepads[(int)gamepad].prevState.Buttons.Y == ButtonState.Pressed
+                    && gamepads[(int)gamepad].state.Buttons.Y == ButtonState.Released;
                 break;
             case Buttons.DPad_up:
                 ret = gamepads[(int)gamepad].prevState.DPad.Up == ButtonState.Pressed
