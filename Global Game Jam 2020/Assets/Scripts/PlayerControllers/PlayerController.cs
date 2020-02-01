@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
             // TODO: animate = false;
             if (objectBehaviour.AreAllHolesScrewed())
             {
+                ++gameController.objectsRepaired;
                 gameController.gameState = GameController.GameState.moveObjectSide;
             }
         }
