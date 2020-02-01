@@ -60,7 +60,34 @@ public class PlayerController : MonoBehaviour
 
             if (objectReady && screwdriverReady)
             {
-                animate = true;
+                RaycastHit raycastHit;
+                if (Physics.Raycast(
+                    screwdriverController.redScrewdriver.transform.position,
+                    objectController.transform.position - screwdriverController.redScrewdriver.transform.position, 
+                    out raycastHit,
+                    Mathf.Infinity))
+                {
+                    if (raycastHit.transform.gameObject.name == "RedHole")
+                    {
+                        Debug.Log("RED HOLE HIT");
+                        // TODO: red screwdriver animation
+                        animate = true;
+                    }
+                }
+
+                if (Physics.Raycast(
+                    screwdriverController.blueScrewdriver.transform.position,
+                    objectController.transform.position - screwdriverController.blueScrewdriver.transform.position,
+                    out raycastHit,
+                    Mathf.Infinity))
+                {
+                    if (raycastHit.transform.gameObject.name == "BlueHole")
+                    {
+                        Debug.Log("BLUE HOLE HIT");
+                        // TODO: blue screwdriver animation
+                        animate = true;
+                    }
+                }
             }
         }
     }

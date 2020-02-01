@@ -58,11 +58,11 @@ public class ObjectBehaviour : MonoBehaviour
                     Vector3 spawnPosition = new Vector3(x, y, z);
                     if (Random.value <= redProbability)
                     {
-                        Instantiate(Resources.Load("RedHole") as GameObject, spawnPosition, Quaternion.identity);
+                        Instantiate(Resources.Load("RedHole") as GameObject, spawnPosition, Quaternion.identity, transform);
                     }
                     else
                     {
-                        Instantiate(Resources.Load("BlueHole") as GameObject, spawnPosition, Quaternion.identity);
+                        Instantiate(Resources.Load("BlueHole") as GameObject, spawnPosition, Quaternion.identity, transform);
                     }
                 }
             }

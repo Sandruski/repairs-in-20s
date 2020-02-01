@@ -16,6 +16,9 @@ public class ScrewdriverController : MonoBehaviour
 
     public InputManager inputManager;
     public PlayerController playerController;
+
+    public GameObject redScrewdriver;
+    public GameObject blueScrewdriver;
     #endregion
 
     #region PRIVATE_VARIABLES
