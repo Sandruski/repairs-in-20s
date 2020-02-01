@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 395376587999273177}
   - component: {fileID: 5318737978394578898}
   - component: {fileID: 1102617928120882481}
-  - component: {fileID: 6829361133773991889}
+  - component: {fileID: 2317640620650747665}
   m_Layer: 0
   m_Name: BlueHole
   m_TagString: Untagged
@@ -80,7 +80,7 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
---- !u!136 &6829361133773991889
+--- !u!136 &2317640620650747665
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -90,7 +90,7 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.0036732065
+  m_Height: 0.00636497
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0, z: 0}

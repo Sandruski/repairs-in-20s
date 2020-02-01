@@ -29,6 +29,7 @@ public class PlayerController : MonoBehaviour
     {
         if (animate)
         {
+            Debug.Log("SCREWING...");
             // If animation is finished...
             // TODO: animate = false;
             inputManager.SetVibration(InputManager.Gamepads.Gamepad_1, 0.5f, 0.5f);
