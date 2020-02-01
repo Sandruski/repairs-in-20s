@@ -5,8 +5,9 @@ public class UIManager : MonoBehaviour
 {
     public GameObject menu;
     public ObjectController objectController;
+    public GameController gameController;
     public Text text;
-    // Update is called once per frame
+
     void Update()
     {
         text.text = Mathf.CeilToInt(objectController.GameplayTimer).ToString();
@@ -15,6 +16,7 @@ public class UIManager : MonoBehaviour
     public void Play()
     {
         menu.SetActive(false);
+        gameController.gameState = GameController.GameState.play;
     }
 
     public void Howtoplay()
