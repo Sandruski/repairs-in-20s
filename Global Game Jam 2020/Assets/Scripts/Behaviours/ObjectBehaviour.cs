@@ -14,18 +14,19 @@ public class ObjectBehaviour : MonoBehaviour
     public ScrewdriverController screwdriverController;
     #endregion
 
+    #region PRIVATE_VARIABLES
+    public List<GameObject> holes;
+    #endregion
+
     void Start()
     {
-        //SpawnHoles();
+        holes = new List<GameObject>();
     }
 
-    void Update()
+    public void SpawnHoles()
     {
-        
-    }
+        RemoveHoles();
 
-    void SpawnHoles()
-    {
         bool hasSpawned = false;
 
         for (uint i = 0; i < height; ++i)
@@ -61,16 +62,28 @@ public class ObjectBehaviour : MonoBehaviour
                     }
 
                     Vector3 spawnPosition = transform.position + new Vector3(x, y, z);
+                    GameObject hole = null;
                     if (Random.value <= redProbability)
                     {
-                        Instantiate(Resources.Load("RedHole") as GameObject, spawnPosition, Quaternion.identity, transform);
+                        hole = Instantiate(Resources.Load("RedHole") as GameObject, spawnPosition, Quaternion.identity, transform);
                     }
                     else
                     {
-                        Instantiate(Resources.Load("BlueHole") as GameObject, spawnPosition, Quaternion.identity, transform);
+                        hole = Instantiate(Resources.Load("BlueHole") as GameObject, spawnPosition, Quaternion.identity, transform);
                     }
+                    holes.Add(hole);
                 }
             }
         }
+    }
+
+    void RemoveHoles()
+    {
+        foreach (GameObject hole in holes)
+        {
+            Destroy(hole);
+        }
+
+        holes.Clear();
     }
 }

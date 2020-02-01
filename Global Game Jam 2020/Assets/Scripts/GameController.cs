@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     public InputManager inputManager;
     public ScrewdriverController screwdriverController;
     public ObjectController objectController;
+    public ObjectBehaviour objectBehaviour;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -95,6 +96,7 @@ public class GameController : MonoBehaviour
             if (timer >= screwdriverDownInterpolateSeconds)
             {
                 interpolate = false;
+                objectBehaviour.SpawnHoles();
                 gameState = GameState.moveObjectDown;
             }
             else
@@ -140,7 +142,11 @@ public class GameController : MonoBehaviour
     void MoveObjectDown()
     {
         objectController.GetComponent<Rigidbody>().isKinematic = false;
-        gameState = GameState.play;
+        if (objectController.GetComponent<Rigidbody>().velocity == Vector3.zero)
+        {
+            Debug.Log("PLAY");
+            gameState = GameState.play;
+        }
     }
 
     void MoveObjectSide()
