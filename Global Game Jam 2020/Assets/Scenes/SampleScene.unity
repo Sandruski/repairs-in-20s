@@ -604,8 +604,9 @@ GameObject:
   - component: {fileID: 1114203168}
   - component: {fileID: 1114203167}
   - component: {fileID: 1114203171}
+  - component: {fileID: 1114203172}
   m_Layer: 0
-  m_Name: Object
+  m_Name: TV
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -701,6 +702,16 @@ MonoBehaviour:
   interpolateSeconds: 0.1
   inputManager: {fileID: 151487967}
   playerController: {fileID: 151487970}
+  flipAudioClipLeft: {fileID: 8300000, guid: 853d9a9fe3cb4544f8187eea2d249902, type: 3}
+  flipAudioClipRight: {fileID: 8300000, guid: c786e58b9eb7fa841bf0fd91240c58b3, type: 3}
+--- !u!81 &1114203172
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1114203166}
+  m_Enabled: 1
 --- !u!1 &1522554167
 GameObject:
   m_ObjectHideFlags: 0
