@@ -49,7 +49,7 @@ public class ObjectBehaviour : MonoBehaviour
                     hasSpawned = true;
 
                     float halfHeightDistance = screwdriverController.heightDistance / 2.0f;
-                    float y = i * halfHeightDistance;
+                    float y = (i + 1) * halfHeightDistance;
 
                     float halfWidthDistance = size.x / 2.0f;
                     float x = 0.0f;
@@ -71,7 +71,7 @@ public class ObjectBehaviour : MonoBehaviour
                             break;
                     }
 
-                    Vector3 spawnPosition = transform.position + new Vector3(x, y, z);
+                    Vector3 spawnPosition = transform.position - new Vector3(0.0f, size.y / 2.0f, 0.0f) + new Vector3(x, y, z);
                     GameObject hole = null;
                     if (Random.value <= redProbability)
                     {
