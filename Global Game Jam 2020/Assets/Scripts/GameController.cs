@@ -8,9 +8,9 @@ public class GameController : MonoBehaviour
     public enum GameState { 
         startscreen,
         moveScrewdriverDown, 
-        moveObjectDown, 
-        moveScrewdriverUp, 
+        moveObjectDown,
         play,
+        moveScrewdriverUp, 
         moveObjectSide,
         endscreen 
     };
@@ -19,6 +19,7 @@ public class GameController : MonoBehaviour
     public InputManager inputManager;
     public ScrewdriverController screwdriverController;
     public ObjectController objectController;
+    public ObjectBehaviour objectBehaviour;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -95,6 +96,8 @@ public class GameController : MonoBehaviour
             if (timer >= screwdriverDownInterpolateSeconds)
             {
                 interpolate = false;
+                objectBehaviour.SpawnHoles();
+                objectController.GetComponent<Rigidbody>().isKinematic = false;
                 gameState = GameState.moveObjectDown;
             }
             else
@@ -139,13 +142,14 @@ public class GameController : MonoBehaviour
 
     void MoveObjectDown()
     {
-        objectController.GetComponent<Rigidbody>().isKinematic = false;
-        gameState = GameState.moveScrewdriverUp;
+        if (objectBehaviour.TouchGround)
+        {
+            gameState = GameState.play;
+        }
     }
 
     void MoveObjectSide()
     {
-        objectController.GetComponent<Rigidbody>().isKinematic = true;
-        // TODO
+        objectController.GetComponent<Rigidbody>().AddForce(Vector3.right, ForceMode.Impulse);
     }
 }

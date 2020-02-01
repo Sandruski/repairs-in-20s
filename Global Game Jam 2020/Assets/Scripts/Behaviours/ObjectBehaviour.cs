@@ -5,27 +5,38 @@ using UnityEngine;
 public class ObjectBehaviour : MonoBehaviour
 {
     #region PUBLIC_VARIABLES
+    public bool TouchGround
+    {
+        get { return touchGround; }
+    }
+
     public uint height;
-    public float widthDistance;
 
     public float spawnProbability;
     public float redProbability;
 
     public ScrewdriverController screwdriverController;
+
+    [HideInInspector]
+    public Vector3 size;
+    #endregion
+
+    #region PRIVATE_VARIABLES
+    private bool touchGround = false;
+    public List<GameObject> holes;
     #endregion
 
     void Start()
     {
-        //SpawnHoles();
+        holes = new List<GameObject>();
+        size = Vector3.Scale(transform.localScale, GetComponent<MeshFilter>().mesh.bounds.size);
     }
 
-    void Update()
+    public void SpawnHoles()
     {
-        
-    }
+        touchGround = false;
+        RemoveHoles();
 
-    void SpawnHoles()
-    {
         bool hasSpawned = false;
 
         for (uint i = 0; i < height; ++i)
@@ -38,9 +49,9 @@ public class ObjectBehaviour : MonoBehaviour
                     hasSpawned = true;
 
                     float halfHeightDistance = screwdriverController.heightDistance / 2.0f;
-                    float y = i * halfHeightDistance;
+                    float y = (i + 1) * halfHeightDistance;
 
-                    float halfWidthDistance = widthDistance / 2.0f;
+                    float halfWidthDistance = size.x / 2.0f;
                     float x = 0.0f;
                     float z = 0.0f;
 
@@ -60,17 +71,52 @@ public class ObjectBehaviour : MonoBehaviour
                             break;
                     }
 
-                    Vector3 spawnPosition = transform.position + new Vector3(x, y, z);
+                    Vector3 spawnPosition = transform.position - new Vector3(0.0f, size.y / 2.0f, 0.0f) + new Vector3(x, y, z);
+                    GameObject hole = null;
                     if (Random.value <= redProbability)
                     {
-                        Instantiate(Resources.Load("RedHole") as GameObject, spawnPosition, Quaternion.identity, transform);
+                        hole = Instantiate(Resources.Load("RedHole") as GameObject, spawnPosition, Quaternion.identity, transform);
                     }
                     else
                     {
-                        Instantiate(Resources.Load("BlueHole") as GameObject, spawnPosition, Quaternion.identity, transform);
+                        hole = Instantiate(Resources.Load("BlueHole") as GameObject, spawnPosition, Quaternion.identity, transform);
                     }
+                    holes.Add(hole);
                 }
             }
+        }
+    }
+
+    void RemoveHoles()
+    {
+        foreach (GameObject hole in holes)
+        {
+            Destroy(hole);
+        }
+
+        holes.Clear();
+    }
+
+    public bool AreAllHolesScrewed()
+    {
+        uint count = 0;
+
+        foreach (GameObject hole in holes)
+        {
+            if (hole.GetComponent<HoleBehaviour>().screwed)
+            {
+                ++count;
+            }
+        }
+
+        return count == holes.Count;
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Floor")
+        {
+            touchGround = true;
         }
     }
 }

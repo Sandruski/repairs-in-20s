@@ -15,9 +15,12 @@ public class ObjectController : MonoBehaviour
 
     public InputManager inputManager;
     public PlayerController playerController;
+    public GameController gameController;
 
     public AudioClip flipAudioClipLeft;
     public AudioClip flipAudioClipRight;
+
+    public float GameplayTimer = 20.0f;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -29,13 +32,23 @@ public class ObjectController : MonoBehaviour
     private AudioSource audioSource;
     #endregion
 
-    private void Start()
+    void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
     {
+        if (gameController.gameState == GameController.GameState.play)
+        {
+            GameplayTimer -= Time.deltaTime;
+            if (GameplayTimer <= 0.0f)
+            {
+                GameplayTimer = 0.0f;
+                gameController.gameState = GameController.GameState.endscreen;
+            }
+        }
+
         if (interpolate)
         {
             float t = timer / interpolateSeconds;
