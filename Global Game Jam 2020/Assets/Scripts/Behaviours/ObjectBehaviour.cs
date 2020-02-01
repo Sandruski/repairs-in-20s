@@ -34,6 +34,7 @@ public class ObjectBehaviour : MonoBehaviour
     {
         holes = new List<GameObject>();
         size = Vector3.Scale(transform.localScale, GetComponent<MeshFilter>().mesh.bounds.size);
+        SpawnHoles();
     }
 
     public void SpawnHoles()
@@ -75,7 +76,7 @@ public class ObjectBehaviour : MonoBehaviour
                             break;
                     }
 
-                    if (z == halfWidthDistance)
+                    if (z == -halfWidthDistance)
                     {
                         // Not forward!
                         continue;
@@ -102,7 +103,7 @@ public class ObjectBehaviour : MonoBehaviour
         }
     }
 
-    void RemoveHoles()
+    public void RemoveHoles()
     {
         foreach (GameObject hole in holes)
         {

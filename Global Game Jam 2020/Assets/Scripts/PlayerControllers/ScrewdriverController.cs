@@ -16,6 +16,7 @@ public class ScrewdriverController : MonoBehaviour
 
     public InputManager inputManager;
     public PlayerController playerController;
+    public GameController gameController;
 
     public GameObject redScrewdriver;
     public GameObject blueScrewdriver;
@@ -42,6 +43,11 @@ public class ScrewdriverController : MonoBehaviour
     }
     void Update()
     {
+        if (gameController.gameState != GameController.GameState.play)
+        {
+            return;
+        }
+
         if (interpolate)
         {
             float t = timer / interpolateSeconds;

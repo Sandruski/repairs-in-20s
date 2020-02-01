@@ -39,6 +39,11 @@ public class ObjectController : MonoBehaviour
 
     void Update()
     {
+        if (gameController.gameState != GameController.GameState.play)
+        {
+            return;
+        }
+
         if (gameController.gameState == GameController.GameState.play)
         {
             GameplayTimer -= Time.deltaTime;

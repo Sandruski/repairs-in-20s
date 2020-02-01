@@ -30,9 +30,15 @@ public class GameController : MonoBehaviour
     #endregion
 
     #region PRIVATE_VARIABLES
-    private bool objectReady;
-    private bool screwdriverReady;
+    //private bool objectReady;
+    //private bool screwdriverReady;
+    private bool firstGame;
     #endregion
+
+    void Start()
+    {
+        firstGame = true;
+    }
 
     void Update()
     {
@@ -89,6 +95,10 @@ public class GameController : MonoBehaviour
             gameState = GameState.play;
         }*/
 
+        if (dollyMovement.isAtEnd)
+        {
+            gameState = GameState.moveScrewdriverDown;
+        }
     }
 
     public float screwdriverDownInterpolateSeconds;
@@ -109,9 +119,21 @@ public class GameController : MonoBehaviour
             if (timer >= screwdriverDownInterpolateSeconds)
             {
                 interpolate = false;
-                objectBehaviour.SpawnHoles();
+                if (!firstGame)
+                {
+                    objectBehaviour.RemoveHoles();
+                    objectBehaviour.SpawnHoles();
+                }
                 objectController.GetComponent<Rigidbody>().isKinematic = false;
-                gameState = GameState.moveObjectDown;
+
+                if (firstGame)
+                {
+                    gameState = GameState.play;
+                }
+                else
+                {
+                    gameState = GameState.moveObjectDown;
+                }
             }
             else
             {

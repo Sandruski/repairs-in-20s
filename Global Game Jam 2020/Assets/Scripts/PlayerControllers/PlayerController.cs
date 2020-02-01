@@ -29,6 +29,11 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        if (gameController.gameState != GameController.GameState.play)
+        {
+            return;
+        }
+
         if (animate)
         {
             Debug.Log("SCREWING...");
