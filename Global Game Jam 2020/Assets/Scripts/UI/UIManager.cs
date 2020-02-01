@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class UIManager : MonoBehaviour
 {
@@ -22,7 +23,7 @@ public class UIManager : MonoBehaviour
 
     public void Howtoplay()
     {
-
+        SceneManager.LoadScene("How To Play", LoadSceneMode.Single);
     }
 
     public void Exit()
