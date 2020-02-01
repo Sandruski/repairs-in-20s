@@ -122,8 +122,6 @@ public class GameController : MonoBehaviour
         if (interpolate)
         {
             float t = timer / screwdriverDownInterpolateSeconds;
-            // screwdriverController.transform.position = Vector3.Lerp(fromPosition, toPosition, t);
-            
             guide1.transform.localPosition = Vector3.Lerp(fromPosition1, toPosition1, t);
             guide2.transform.localPosition = Vector3.Lerp(fromPosition2, toPosition2, t);
 
@@ -135,15 +133,11 @@ public class GameController : MonoBehaviour
                     objectBehaviour.RemoveHoles();
                     objectBehaviour.SpawnHoles();
                     objectController.GetComponent<Rigidbody>().isKinematic = false;
-                }
-
-                if (firstGame)
-                {
-                    gameState = GameState.play;
+                    gameState = GameState.moveObjectDown;
                 }
                 else
                 {
-                    gameState = GameState.moveObjectDown;
+                    gameState = GameState.play;
                 }
             }
             else
@@ -167,8 +161,8 @@ public class GameController : MonoBehaviour
         if (interpolate)
         {
             float t = timer / screwdriverUpInterpolateSeconds;
-            guide1.position = Vector3.Lerp(fromPosition1, toPosition1, t);
-            guide2.position = Vector3.Lerp(fromPosition2, toPosition2, t);
+            guide1.transform.localPosition = Vector3.Lerp(fromPosition1, toPosition1, t);
+            guide2.transform.localPosition = Vector3.Lerp(fromPosition2, toPosition2, t);
 
             if (timer >= screwdriverUpInterpolateSeconds)
             {
@@ -182,10 +176,10 @@ public class GameController : MonoBehaviour
         }
         else
         {
-            fromPosition1 = guide1.position;
-            toPosition1 = fromPosition1 - new Vector3(0.0f, 5.0f, 0.0f);
-            fromPosition2 = guide2.position;
-            toPosition2 = fromPosition2 - new Vector3(0.0f, 5.0f, 0.0f);
+            fromPosition1 = guide1.transform.localPosition;
+            toPosition1 = new Vector3(guide1.transform.localPosition.x, 0.025f, guide1.transform.localPosition.z);
+            fromPosition2 = guide2.transform.localPosition;
+            toPosition2 = new Vector3(guide2.transform.localPosition.x, 0.025f, guide2.transform.localPosition.z);
             timer = 0.0f;
             interpolate = true;
         }

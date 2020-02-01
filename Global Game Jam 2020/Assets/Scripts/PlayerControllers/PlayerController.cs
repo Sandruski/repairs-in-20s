@@ -44,16 +44,18 @@ void Update()
 
         if (animate)
         {
-            Debug.Log("SCREWING...");
-
-            if (objectBehaviour.AreAllHolesRemoved())
+            if (!ClawRotation.instance.drill_L && !ClawRotation.instance.drill_R)
             {
-                ++gameController.objectsRepaired;
-                gameController.gameState = GameController.GameState.moveObjectSide;
-                objectController.GameplayTimer += 5.0f;
-            }
+                if (objectBehaviour.AreAllHolesRemoved())
+                {
+                    Debug.Log("All holes have been removed!");
+                    ++gameController.objectsRepaired;
+                    gameController.gameState = GameController.GameState.moveScrewdriverUp;
+                    objectController.GameplayTimer += 5.0f;
+                }
 
-            animate = false;
+                animate = false;
+            }
         }
         else
         {
@@ -96,8 +98,7 @@ void Update()
                     {
                         ClawRotation.instance.DrillRight();
 
-                        Debug.Log("RED HOLE HIT");
-                        // TODO: red screwdriver animation
+                        Debug.Log("Red hole hit");
                         objectBehaviour.RemoveHole(raycastHit.transform.gameObject);
                         animate = true;
                     }
@@ -113,8 +114,7 @@ void Update()
                     {
                         ClawRotation.instance.DrillLeft();
 
-                        Debug.Log("BLUE HOLE HIT");
-                        // TODO: blue screwdriver animation
+                        Debug.Log("Blue hole hit");
                         objectBehaviour.RemoveHole(raycastHit.transform.gameObject);
                         animate = true;
                     }
