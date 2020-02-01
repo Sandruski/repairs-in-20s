@@ -6,7 +6,7 @@ public class ObjectBehaviour : MonoBehaviour
 {
     #region PUBLIC_VARIABLES
     public uint height;
-    public float halfWidthDistance;
+    public float widthDistance;
 
     public float spawnProbability;
     public float redProbability;
@@ -32,7 +32,10 @@ public class ObjectBehaviour : MonoBehaviour
             {
                 if (Random.value <= spawnProbability)
                 {
-                    float y = height * screwdriverController.heightDistance;
+                    float halfHeightDistance = screwdriverController.heightDistance / 2.0f;
+                    float y = height * halfHeightDistance;
+
+                    float halfWidthDistance = widthDistance / 2.0f;
                     float x = 0.0f;
                     float z = 0.0f;
 
