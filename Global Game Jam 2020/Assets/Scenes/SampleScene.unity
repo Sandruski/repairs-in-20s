@@ -133,6 +133,7 @@ GameObject:
   - component: {fileID: 151487967}
   - component: {fileID: 151487970}
   - component: {fileID: 151487969}
+  - component: {fileID: 151487971}
   m_Layer: 0
   m_Name: Singletons
   m_TagString: Untagged
@@ -193,6 +194,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screwdriverController: {fileID: 1171637989}
   objectController: {fileID: 1114203171}
+  inputManager: {fileID: 151487967}
+--- !u!114 &151487971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151487966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 33bf6c9362f5ef645a5cb94c4f54b5e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameState: 1
   inputManager: {fileID: 151487967}
 --- !u!1 &705507993
 GameObject:
@@ -961,6 +976,31 @@ PrefabInstance:
       propertyPath: m_Name
       value: Object
       objectReference: {fileID: 0}
+    - target: {fileID: 3265113319987675081, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 0.06051662
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265113319987675081, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: m_Size.y
+      value: 0.07410662
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265113319987675081, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: m_Size.z
+      value: 0.056275275
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265113319987675081, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: m_Center.x
+      value: 0.00020232145
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265113319987675081, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: m_Center.y
+      value: -0.00015943125
+      objectReference: {fileID: 0}
     - target: {fileID: 3265113319987675122, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
       propertyPath: screwdriverController
@@ -1034,17 +1074,17 @@ PrefabInstance:
     - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1
+      value: 40
       objectReference: {fileID: 0}
     - target: {fileID: 3265113319987675125, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
@@ -1071,6 +1111,18 @@ PrefabInstance:
       propertyPath: flipAudioClipLeft
       value: 
       objectReference: {fileID: 8300000, guid: 853d9a9fe3cb4544f8187eea2d249902, type: 3}
+    - target: {fileID: 3265113319987675126, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: -708852384464159272, guid: 6ccc02d26e3eca642ac0767ee40bfce7,
+        type: 3}
+    - target: {fileID: 3265113319987675127, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: -2971176557499988169, guid: 6ccc02d26e3eca642ac0767ee40bfce7,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37aeedc58ded58f4da435bc0668077b4, type: 3}
 --- !u!1001 &7484195882152650947
