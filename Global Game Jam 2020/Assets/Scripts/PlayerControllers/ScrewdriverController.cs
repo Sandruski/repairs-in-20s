@@ -40,7 +40,6 @@ public class ScrewdriverController : MonoBehaviour
     {
         audioSource = GetComponent<AudioSource>();
     }
-
     void Update()
     {
         if (interpolate)

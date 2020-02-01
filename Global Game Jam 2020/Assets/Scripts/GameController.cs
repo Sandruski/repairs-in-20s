@@ -5,10 +5,20 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     #region PUBLIC_VARIABLES
-    public enum GameState { startscreen, play, moveScrewdriverDown, spawnObject, moveScrewdriverUp, moveObject, endscreen };
+    public enum GameState { 
+        startscreen,
+        moveScrewdriverDown, 
+        moveObjectDown, 
+        moveScrewdriverUp, 
+        play,
+        moveObjectSide,
+        endscreen 
+    };
     public GameState gameState;
 
     public InputManager inputManager;
+    public ScrewdriverController screwdriverController;
+    public ObjectController objectController;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -22,13 +32,19 @@ public class GameController : MonoBehaviour
         {
             case GameState.startscreen:
                 break;
-            case GameState.play:
-                break;
             case GameState.moveScrewdriverDown:
+                UpdateMoveScrewdriverDown();
                 break;
-            case GameState.spawnObject:
+            case GameState.moveObjectDown:
+                MoveObjectDown();
                 break;
             case GameState.moveScrewdriverUp:
+                UpdateMoveScrewdriverUp();
+                break;
+            case GameState.play:
+                break;
+            case GameState.moveObjectSide:
+                MoveObjectSide();
                 break;
             case GameState.endscreen:
                 break;
@@ -59,5 +75,77 @@ public class GameController : MonoBehaviour
         {
             gameState = GameState.play;
         }
+    }
+
+    public float screwdriverDownInterpolateSeconds;
+    public float screwdriverUpInterpolateSeconds;
+
+    private Vector3 fromPosition;
+    private Vector3 toPosition;
+    private float timer;
+    private bool interpolate;
+
+    void UpdateMoveScrewdriverDown()
+    {
+        if (interpolate)
+        {
+            float t = timer / screwdriverDownInterpolateSeconds;
+            screwdriverController.transform.position = Vector3.Lerp(fromPosition, toPosition, t);
+
+            if (timer >= screwdriverDownInterpolateSeconds)
+            {
+                interpolate = false;
+                gameState = GameState.moveObjectDown;
+            }
+            else
+            {
+                timer += Time.deltaTime;
+            }
+        }
+        else
+        {
+            fromPosition = screwdriverController.transform.position;
+            toPosition = Vector3.up * screwdriverController.heightDistance;
+            timer = 0.0f;
+            interpolate = true;
+        }
+    }
+
+    void UpdateMoveScrewdriverUp()
+    {
+        if (interpolate)
+        {
+            float t = timer / screwdriverUpInterpolateSeconds;
+            screwdriverController.transform.position = Vector3.Lerp(fromPosition, toPosition, t);
+
+            if (timer >= screwdriverUpInterpolateSeconds)
+            {
+                interpolate = false;
+                gameState = GameState.moveObjectSide;
+            }
+            else
+            {
+                timer += Time.deltaTime;
+            }
+        }
+        else
+        {
+            fromPosition = screwdriverController.transform.position;
+            toPosition = new Vector3(0.0f, 5.0f, 0.0f);
+            timer = 0.0f;
+            interpolate = true;
+        }
+    }
+
+    void MoveObjectDown()
+    {
+        objectController.GetComponent<Rigidbody>().isKinematic = false;
+        gameState = GameState.moveScrewdriverUp;
+    }
+
+    void MoveObjectSide()
+    {
+        objectController.GetComponent<Rigidbody>().isKinematic = true;
+        // TODO
     }
 }

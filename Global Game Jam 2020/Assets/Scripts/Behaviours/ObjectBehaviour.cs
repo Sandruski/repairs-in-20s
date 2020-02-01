@@ -16,8 +16,7 @@ public class ObjectBehaviour : MonoBehaviour
 
     void Start()
     {
-        SpawnHoles();
-        GetComponent<Rigidbody>().isKinematic = false;
+        //SpawnHoles();
     }
 
     void Update()
