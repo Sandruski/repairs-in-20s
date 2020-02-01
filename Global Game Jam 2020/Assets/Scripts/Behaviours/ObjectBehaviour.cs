@@ -83,6 +83,7 @@ public class ObjectBehaviour : MonoBehaviour
                         if ((i == height - 1 && j == 3 && !hasSpawned))
                         {
                             z *= -1.0f;
+                            spawnRotation = Quaternion.AngleAxis(90.0f, Vector3.up);
                         }
                         else
                         {
