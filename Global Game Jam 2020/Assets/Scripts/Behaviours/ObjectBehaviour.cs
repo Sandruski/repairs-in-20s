@@ -17,6 +17,7 @@ public class ObjectBehaviour : MonoBehaviour
     void Start()
     {
         SpawnHoles();
+        GetComponent<Rigidbody>().isKinematic = false;
     }
 
     void Update()
@@ -38,7 +39,7 @@ public class ObjectBehaviour : MonoBehaviour
                     hasSpawned = true;
 
                     float halfHeightDistance = screwdriverController.heightDistance / 2.0f;
-                    float y = height * halfHeightDistance;
+                    float y = i * halfHeightDistance;
 
                     float halfWidthDistance = widthDistance / 2.0f;
                     float x = 0.0f;
@@ -59,8 +60,8 @@ public class ObjectBehaviour : MonoBehaviour
                             z = -halfWidthDistance;
                             break;
                     }
-                    
-                    Vector3 spawnPosition = new Vector3(x, y, z);
+
+                    Vector3 spawnPosition = transform.position + new Vector3(x, y, z);
                     if (Random.value <= redProbability)
                     {
                         Instantiate(Resources.Load("RedHole") as GameObject, spawnPosition, Quaternion.identity, transform);
