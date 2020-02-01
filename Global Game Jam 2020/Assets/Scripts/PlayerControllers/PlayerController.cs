@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
         {
             // If animation is finished...
             // TODO: animate = false;
+            inputManager.SetVibration(InputManager.Gamepads.Gamepad_1, 0.5f, 0.5f);
+            inputManager.SetVibration(InputManager.Gamepads.Gamepad_2, 0.5f, 0.5f);
         }
         else
         {
