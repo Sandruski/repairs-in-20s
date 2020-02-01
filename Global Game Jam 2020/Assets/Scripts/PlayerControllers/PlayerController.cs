@@ -50,6 +50,7 @@ void Update()
             {
                 ++gameController.objectsRepaired;
                 gameController.gameState = GameController.GameState.moveObjectSide;
+                objectController.GameplayTimer += 5.0f;
             }
 
             objectReady = screwdriverReady = false;
