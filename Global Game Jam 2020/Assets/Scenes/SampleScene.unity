@@ -2733,6 +2733,7 @@ MonoBehaviour:
   drill_L_transform: {fileID: 6147468022322523138}
   drill_R_transform: {fileID: 6147468021003933473}
   drillClip: {fileID: 8300000, guid: 3a32d82a8cbbde247a9b8a46296e5e9a, type: 3}
+  inputManager: {fileID: 151487967}
 --- !u!82 &7484195880272517299
 AudioSource:
   m_ObjectHideFlags: 0

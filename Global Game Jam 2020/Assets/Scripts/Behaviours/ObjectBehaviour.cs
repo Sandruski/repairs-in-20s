@@ -40,7 +40,6 @@ public class ObjectBehaviour : MonoBehaviour
     public void SpawnHoles()
     {
         touchGround = false;
-        RemoveHoles();
 
         bool hasSpawned = false;
 
@@ -110,9 +109,15 @@ public class ObjectBehaviour : MonoBehaviour
         }
     }
 
+    public void RemoveHole(GameObject hole)
+    {
+        holes.Remove(hole);
+        Destroy(hole);
+    }
+
     public void RemoveHoles()
     {
-        foreach (GameObject hole in holes)
+        foreach(GameObject hole in holes)
         {
             Destroy(hole);
         }
@@ -120,19 +125,9 @@ public class ObjectBehaviour : MonoBehaviour
         holes.Clear();
     }
 
-    public bool AreAllHolesScrewed()
+    public bool AreAllHolesRemoved()
     {
-        uint count = 0;
-
-        foreach (GameObject hole in holes)
-        {
-            if (hole.GetComponent<HoleBehaviour>().screwed)
-            {
-                ++count;
-            }
-        }
-
-        return count == holes.Count;
+        return holes.Count == 0;
     }
 
     void OnCollisionEnter(Collision collision)

@@ -19,6 +19,8 @@ public class ClawRotation : MonoBehaviour
     public Transform drill_R_transform;
     public AudioClip drillClip;
 
+    public InputManager inputManager;
+
     private void Awake()
     {
         instance = this;
@@ -43,6 +45,8 @@ public class ClawRotation : MonoBehaviour
         {
             drill_L_timer = 0.0f;
             drill_L = false;
+            inputManager.SetVibration(InputManager.Gamepads.Gamepad_1, 0.0f, 0.0f);
+            inputManager.SetVibration(InputManager.Gamepads.Gamepad_2, 0.0f, 0.0f);
         }
 
         if (drill_R && drill_R_timer <= drill_time)
@@ -59,6 +63,8 @@ public class ClawRotation : MonoBehaviour
         {
             drill_R_timer = 0.0f;
             drill_R = false;
+            inputManager.SetVibration(InputManager.Gamepads.Gamepad_1, 0.0f, 0.0f);
+            inputManager.SetVibration(InputManager.Gamepads.Gamepad_2, 0.0f, 0.0f);
         }
     }
 
@@ -66,11 +72,15 @@ public class ClawRotation : MonoBehaviour
     {
         drill_L = true;
         audioSource.PlayOneShot(drillClip);
+        inputManager.SetVibration(InputManager.Gamepads.Gamepad_1, 0.5f, 0.5f);
+        inputManager.SetVibration(InputManager.Gamepads.Gamepad_2, 0.5f, 0.5f);
     }
 
     public void DrillRight()
     {
         drill_R = true;
         audioSource.PlayOneShot(drillClip);
+        inputManager.SetVibration(InputManager.Gamepads.Gamepad_1, 0.5f, 0.5f);
+        inputManager.SetVibration(InputManager.Gamepads.Gamepad_2, 0.5f, 0.5f);
     }
 }
