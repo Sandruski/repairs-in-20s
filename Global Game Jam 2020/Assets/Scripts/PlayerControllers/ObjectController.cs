@@ -15,6 +15,9 @@ public class ObjectController : MonoBehaviour
 
     public InputManager inputManager;
     public PlayerController playerController;
+
+    public AudioClip flipAudioClipLeft;
+    public AudioClip flipAudioClipRight;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -22,7 +25,14 @@ public class ObjectController : MonoBehaviour
     private Quaternion toRotation;
     private float timer;
     private bool interpolate;
+
+    private AudioSource audioSource;
     #endregion
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -49,6 +59,9 @@ public class ObjectController : MonoBehaviour
                 toRotation = transform.rotation * Quaternion.AngleAxis(rotateDegrees, Vector3.up);
                 timer = 0.0f;
                 interpolate = true;
+
+                //PLAY SOUND FLIP Left
+                audioSource.PlayOneShot(flipAudioClipLeft);
             }
             else if (Input.GetKeyDown(KeyCode.RightArrow)
                 || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.Dpad_right))
@@ -57,6 +70,9 @@ public class ObjectController : MonoBehaviour
                 toRotation = transform.rotation * Quaternion.AngleAxis(rotateDegrees, -Vector3.up);
                 timer = 0.0f;
                 interpolate = true;
+
+                //PLAY SOUND FLIP Left
+                audioSource.PlayOneShot(flipAudioClipRight);
             }
         }
     }
