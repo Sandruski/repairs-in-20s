@@ -8,9 +8,9 @@ public class GameController : MonoBehaviour
     public enum GameState { 
         startscreen,
         moveScrewdriverDown, 
-        moveObjectDown, 
-        moveScrewdriverUp, 
+        moveObjectDown,
         play,
+        moveScrewdriverUp, 
         moveObjectSide,
         endscreen 
     };
@@ -140,7 +140,7 @@ public class GameController : MonoBehaviour
     void MoveObjectDown()
     {
         objectController.GetComponent<Rigidbody>().isKinematic = false;
-        gameState = GameState.moveScrewdriverUp;
+        gameState = GameState.play;
     }
 
     void MoveObjectSide()
