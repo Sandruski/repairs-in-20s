@@ -37,7 +37,10 @@ public class PlayerController : MonoBehaviour
             if (!objectController.Interpolate)
             {
                 if (Input.GetKeyDown(KeyCode.Return)
-                    || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.A)) // TODO ALL GAMEPAD BUTTONS
+                    || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.A)
+                    || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.B)
+                    || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.Y)
+                    || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.X))
                 {
                     objectReady = !objectReady;
                 }
@@ -46,7 +49,10 @@ public class PlayerController : MonoBehaviour
             if (!screwdriverController.Interpolate)
             {
                 if (Input.GetKeyDown(KeyCode.Space)
-                    || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.A)) // TODO ALL GAMEPAD BUTTONS
+                    || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.A)
+                    || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.B)
+                    || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.Y)
+                    || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.X))
                 {
                     screwdriverReady = !screwdriverReady;
                 }
