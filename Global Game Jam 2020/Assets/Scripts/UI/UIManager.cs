@@ -10,14 +10,18 @@ public class UIManager : MonoBehaviour
     public Text text;
 
     public DollyMovement dolly;
+
     void Update()
     {
+       // text.gameObject.SetActive(false);
         text.text = Mathf.CeilToInt(objectController.GameplayTimer).ToString();
     }
 
     public void Play()
     {
         menu.SetActive(false);
+        text.gameObject.SetActive(true);
+
         dolly.OutofTV();
     }
 
