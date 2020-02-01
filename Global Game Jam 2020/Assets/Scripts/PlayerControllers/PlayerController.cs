@@ -19,6 +19,9 @@ public class PlayerController : MonoBehaviour
     public ObjectBehaviour objectBehaviour;
     public InputManager inputManager;
     public GameController gameController;
+
+    public GameObject B_Ready_1;
+    public GameObject B_Ready_2;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -27,7 +30,12 @@ public class PlayerController : MonoBehaviour
     private bool animate;
     #endregion
 
-    void Update()
+    private void Start()
+    {
+        B_Ready_1.active = B_Ready_2.active = false;
+    }
+
+void Update()
     {
         if (gameController.gameState != GameController.GameState.play)
         {
@@ -60,6 +68,7 @@ public class PlayerController : MonoBehaviour
                     || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.X))
                 {
                     objectReady = !objectReady;
+                    B_Ready_1.active = !B_Ready_1.active;
                 }
             }
 
@@ -72,6 +81,7 @@ public class PlayerController : MonoBehaviour
                     || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.X))
                 {
                     screwdriverReady = !screwdriverReady;
+                    B_Ready_2.active = !B_Ready_2.active;
                 }
             }
 
@@ -89,6 +99,8 @@ public class PlayerController : MonoBehaviour
                         Debug.Log("RED HOLE HIT");
                         raycastHit.transform.gameObject.GetComponent<HoleBehaviour>().screwed = true;
                         // TODO: red screwdriver animation
+                        ClawRotation.instance.DrillLeft();
+                        ClawRotation.instance.DrillLeft();
                         animate = true;
                     }
                 }
