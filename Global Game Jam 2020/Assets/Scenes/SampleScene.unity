@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -657,6 +657,11 @@ PrefabInstance:
       propertyPath: widthDistance
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3265113319987675122, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: spawnProbability
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -665,7 +670,7 @@ PrefabInstance:
     - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.5
+      value: 1.45
       objectReference: {fileID: 0}
     - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
@@ -712,6 +717,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.9031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.9031
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265113319987675124, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.9031
+      objectReference: {fileID: 0}
     - target: {fileID: 3265113319987675125, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
       propertyPath: inputManager
@@ -722,6 +742,21 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 151487970}
+    - target: {fileID: 3265113319987675125, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: interpolateSeconds
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3265113319987675125, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: flipAudioClipRight
+      value: 
+      objectReference: {fileID: 8300000, guid: c786e58b9eb7fa841bf0fd91240c58b3, type: 3}
+    - target: {fileID: 3265113319987675125, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: flipAudioClipLeft
+      value: 
+      objectReference: {fileID: 8300000, guid: 853d9a9fe3cb4544f8187eea2d249902, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 37aeedc58ded58f4da435bc0668077b4, type: 3}
 --- !u!1001 &7484195882152650947
@@ -796,10 +831,25 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 151487970}
+    - target: {fileID: 7484195881142693414, guid: b84f3e666921d1748b9fbfda9f007d11,
+        type: 3}
+      propertyPath: interpolateSeconds
+      value: 0.1
+      objectReference: {fileID: 0}
     - target: {fileID: 7484195881142693415, guid: b84f3e666921d1748b9fbfda9f007d11,
         type: 3}
       propertyPath: m_Name
       value: Screwdriver
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484195881216423309, guid: b84f3e666921d1748b9fbfda9f007d11,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7484195881706736244, guid: b84f3e666921d1748b9fbfda9f007d11,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b84f3e666921d1748b9fbfda9f007d11, type: 3}
