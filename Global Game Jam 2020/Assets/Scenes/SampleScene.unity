@@ -131,8 +131,10 @@ GameObject:
   m_Component:
   - component: {fileID: 151487968}
   - component: {fileID: 151487967}
+  - component: {fileID: 151487970}
+  - component: {fileID: 151487969}
   m_Layer: 0
-  m_Name: Managers
+  m_Name: Singletons
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -164,6 +166,35 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &151487969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151487966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fd9d242f483243a449a397f79a49b63c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debug: 1
+--- !u!114 &151487970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151487966}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f0a8744e821f7b4d9546dd5b3e1768c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  screwdriverController: {fileID: 666116792}
+  objectController: {fileID: 1114203171}
+  inputManager: {fileID: 151487967}
+  globals: {fileID: 151487969}
 --- !u!1 &666116787
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,6 +305,8 @@ MonoBehaviour:
   heightDistance: 1
   interpolateSeconds: 0.5
   inputManager: {fileID: 151487967}
+  globals: {fileID: 151487969}
+  playerController: {fileID: 151487970}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +435,8 @@ MonoBehaviour:
   heightDistance: 1
   interpolateSeconds: 0.5
   inputManager: {fileID: 151487967}
+  globals: {fileID: 151487969}
+  playerController: {fileID: 151487970}
 --- !u!135 &947838283
 SphereCollider:
   m_ObjectHideFlags: 0
@@ -668,3 +703,5 @@ MonoBehaviour:
   rotateDegrees: 90
   interpolateSeconds: 0.5
   inputManager: {fileID: 151487967}
+  globals: {fileID: 151487969}
+  playerController: {fileID: 151487970}

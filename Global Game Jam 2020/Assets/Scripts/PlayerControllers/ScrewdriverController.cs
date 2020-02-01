@@ -5,11 +5,17 @@ using UnityEngine;
 public class ScrewdriverController : MonoBehaviour
 {
     #region PUBLIC_VARIABLES
+    public bool Interpolate
+    {
+        get { return interpolate; }
+    }
+
     public uint totalHeights;
     public float heightDistance;
     public float interpolateSeconds;
 
     public InputManager inputManager;
+    public PlayerController playerController;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -36,9 +42,10 @@ public class ScrewdriverController : MonoBehaviour
                 timer += Time.deltaTime;
             }
         }
-        else
+        else if (!playerController.ScrewdriverReady)
         {
-            if (inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.DPad_up))
+            if (Input.GetKeyDown(KeyCode.W)
+                || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.DPad_up))
             {
                 uint desiredHeight = currentHeight + 1;
                 if (desiredHeight >= 0 && desiredHeight < totalHeights)
@@ -50,7 +57,8 @@ public class ScrewdriverController : MonoBehaviour
                     currentHeight = desiredHeight;
                 }
             }
-            else if (inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.Dpad_down))
+            else if (Input.GetKeyDown(KeyCode.S)
+                || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.Dpad_down))
             {
                 uint desiredHeight = currentHeight - 1;
                 if (desiredHeight >= 0 && desiredHeight < totalHeights)
