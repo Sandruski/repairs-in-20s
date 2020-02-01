@@ -29,16 +29,22 @@ public class ScrewdriverController : MonoBehaviour
     #endregion
 
     #region PRIVATE_VARIABLES
-    private Vector3 fromPosition;
-    private Vector3 toPosition;
+    private Vector3 fromPosition1;
+    private Vector3 toPosition1;
+    private Vector3 fromPosition2;
+    private Vector3 toPosition2;
     private float timer;
     private bool interpolate;
     private uint currentHeight;
     private AudioSource audioSource;
+    private Transform child1;
+    private Transform child2;
     #endregion
 
     private void Start()
     {
+        child1 = transform.Find("Left_robot_arm_mesh").Find("guide_1").Find("clawTube_1");
+        child2 = transform.Find("Right_robot_arm_mesh").Find("guide_2").Find("clawTube_2");
         audioSource = GetComponent<AudioSource>();
     }
     void Update()
@@ -51,7 +57,8 @@ public class ScrewdriverController : MonoBehaviour
         if (interpolate)
         {
             float t = timer / interpolateSeconds;
-            transform.position = Vector3.Lerp(fromPosition, toPosition, t);
+            child1.transform.position = Vector3.Lerp(fromPosition1, toPosition1, t);
+            child2.transform.position = Vector3.Lerp(fromPosition2, toPosition2, t);
 
             if (timer >= interpolateSeconds)
             {
@@ -70,8 +77,10 @@ public class ScrewdriverController : MonoBehaviour
                 uint desiredHeight = currentHeight + 1;
                 if (desiredHeight >= 0 && desiredHeight < totalHeights)
                 {
-                    fromPosition = transform.position;
-                    toPosition = transform.position + new Vector3(0.0f, heightDistance, 0.0f);
+                    fromPosition1 = child1.transform.position;
+                    toPosition1 = child1.transform.position + new Vector3(0.0f, heightDistance, 0.0f);
+                    fromPosition2 = child2.transform.position;
+                    toPosition2 = child2.transform.position + new Vector3(0.0f, heightDistance, 0.0f);
                     timer = 0.0f;
                     interpolate = true;
                     currentHeight = desiredHeight;
@@ -86,8 +95,10 @@ public class ScrewdriverController : MonoBehaviour
                 uint desiredHeight = currentHeight - 1;
                 if (desiredHeight >= 0 && desiredHeight < totalHeights)
                 {
-                    fromPosition = transform.position;
-                    toPosition = transform.position - new Vector3(0.0f, heightDistance, 0.0f);
+                    fromPosition1 = child1.transform.position;
+                    toPosition1 = child1.transform.position - new Vector3(0.0f, heightDistance, 0.0f);
+                    fromPosition2 = child2.transform.position;
+                    toPosition2 = child2.transform.position - new Vector3(0.0f, heightDistance, 0.0f);
                     timer = 0.0f;
                     interpolate = true;
                     currentHeight = desiredHeight;
