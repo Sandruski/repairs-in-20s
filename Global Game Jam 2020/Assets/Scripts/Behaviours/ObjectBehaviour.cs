@@ -69,12 +69,11 @@ public class ObjectBehaviour : MonoBehaviour
                             x = -halfWidthDistance; // left
                             break;
                         case 2:
-                            z = halfWidthDistance; // forward
-                            spawnRotation = Quaternion.AngleAxis(90.0f, -Vector3.up);
+                            z = halfWidthDistance; // back
+                            spawnRotation = Quaternion.AngleAxis(90.0f, Vector3.up);
                             break;
                         case 3:
-                            z = -halfWidthDistance; // back
-                            spawnRotation = Quaternion.AngleAxis(90.0f, Vector3.up);
+                            z = -halfWidthDistance; // forward
                             break;
                     }
 
