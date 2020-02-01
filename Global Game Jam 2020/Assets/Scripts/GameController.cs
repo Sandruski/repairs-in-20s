@@ -5,7 +5,7 @@ using UnityEngine;
 public class GameController : MonoBehaviour
 {
     #region PUBLIC_VARIABLES
-    public enum GameState { startscreen, play, spawn, endscreen };
+    public enum GameState { startscreen, play, moveScrewdriverDown, spawnObject, moveScrewdriverUp, moveObject, endscreen };
     public GameState gameState;
 
     public InputManager inputManager;
@@ -24,7 +24,11 @@ public class GameController : MonoBehaviour
                 break;
             case GameState.play:
                 break;
-            case GameState.spawn:
+            case GameState.moveScrewdriverDown:
+                break;
+            case GameState.spawnObject:
+                break;
+            case GameState.moveScrewdriverUp:
                 break;
             case GameState.endscreen:
                 break;
