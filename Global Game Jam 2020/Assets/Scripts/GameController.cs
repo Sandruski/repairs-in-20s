@@ -12,7 +12,8 @@ public class GameController : MonoBehaviour
         play,
         moveScrewdriverUp, 
         moveObjectSide,
-        endscreen 
+        prepareNextObject,
+        endscreen
     };
     public GameState gameState;
 
@@ -20,6 +21,11 @@ public class GameController : MonoBehaviour
     public ScrewdriverController screwdriverController;
     public ObjectController objectController;
     public ObjectBehaviour objectBehaviour;
+
+    public float objectInitialHeight;
+
+    [HideInInspector]
+    public uint objectsRepaired;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -46,6 +52,9 @@ public class GameController : MonoBehaviour
                 break;
             case GameState.moveObjectSide:
                 MoveObjectSide();
+                break;
+            case GameState.prepareNextObject:
+                PrepareNextObject();
                 break;
             case GameState.endscreen:
                 break;
@@ -151,5 +160,15 @@ public class GameController : MonoBehaviour
     void MoveObjectSide()
     {
         objectController.GetComponent<Rigidbody>().AddForce(Vector3.right, ForceMode.Impulse);
+    }
+
+    void PrepareNextObject()
+    {
+        int nextObjectHeight = Random.Range(0, (int)screwdriverController.totalHeights);
+        objectBehaviour.height = (uint)nextObjectHeight;
+        // TODO: finish positioning...
+        objectBehaviour.transform.position = new Vector3(0.0f, objectInitialHeight, 0.0f);
+
+        gameState = GameState.moveScrewdriverDown;
     }
 }
