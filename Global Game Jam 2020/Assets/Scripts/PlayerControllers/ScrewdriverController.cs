@@ -22,6 +22,9 @@ public class ScrewdriverController : MonoBehaviour
 
     public AudioClip drillDownClip;
     public AudioClip drillUpClip;
+
+    public LayerMask redHoleLayerMask;
+    public LayerMask blueHoleLayerMask;
     #endregion
 
     #region PRIVATE_VARIABLES

@@ -31,6 +31,8 @@ public class PlayerController : MonoBehaviour
         {
             // If animation is finished...
             // TODO: animate = false;
+            inputManager.SetVibration(InputManager.Gamepads.Gamepad_1, 0.5f, 0.5f);
+            inputManager.SetVibration(InputManager.Gamepads.Gamepad_2, 0.5f, 0.5f);
         }
         else
         {
@@ -63,11 +65,11 @@ public class PlayerController : MonoBehaviour
                 RaycastHit raycastHit;
                 if (Physics.Raycast(
                     screwdriverController.redScrewdriver.transform.position,
-                    objectController.transform.position - screwdriverController.redScrewdriver.transform.position, 
+                    (objectController.transform.position - screwdriverController.redScrewdriver.transform.position).normalized, 
                     out raycastHit,
                     Mathf.Infinity))
                 {
-                    if (raycastHit.transform.gameObject.name == "RedHole")
+                    if (raycastHit.transform.gameObject.name == "RedHole(Clone)")
                     {
                         Debug.Log("RED HOLE HIT");
                         // TODO: red screwdriver animation
@@ -77,11 +79,11 @@ public class PlayerController : MonoBehaviour
 
                 if (Physics.Raycast(
                     screwdriverController.blueScrewdriver.transform.position,
-                    objectController.transform.position - screwdriverController.blueScrewdriver.transform.position,
+                    (objectController.transform.position - screwdriverController.blueScrewdriver.transform.position).normalized,
                     out raycastHit,
                     Mathf.Infinity))
                 {
-                    if (raycastHit.transform.gameObject.name == "BlueHole")
+                    if (raycastHit.transform.gameObject.name == "BlueHole(Clone)")
                     {
                         Debug.Log("BLUE HOLE HIT");
                         // TODO: blue screwdriver animation
