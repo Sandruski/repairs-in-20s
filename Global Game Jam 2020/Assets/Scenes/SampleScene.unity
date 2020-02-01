@@ -444,6 +444,7 @@ MonoBehaviour:
   B_Ready_1: {fileID: 975154319}
   B_Ready_2: {fileID: 558088832}
   sparks: {fileID: 4847148720858677230, guid: e92384874c5b07443a0cae508ddaae4a, type: 3}
+  score: 0
 --- !u!114 &151487971
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1060,7 +1061,7 @@ MonoBehaviour:
     m_Font: {fileID: 12800000, guid: 7e3f3b16aca4aa044be8a6615886f2b0, type: 3}
     m_FontSize: 100
     m_FontStyle: 0
-    m_BestFit: 0
+    m_BestFit: 1
     m_MinSize: 1
     m_MaxSize: 100
     m_Alignment: 4
@@ -3364,6 +3365,7 @@ MonoBehaviour:
   flipAudioClipRight: {fileID: 8300000, guid: c786e58b9eb7fa841bf0fd91240c58b3, type: 3}
   GameplayTimer: 20
   endScreenObj: {fileID: 620129129}
+  scoreText: {fileID: 675516824}
 --- !u!65 &1883344715420561920
 BoxCollider:
   m_ObjectHideFlags: 0

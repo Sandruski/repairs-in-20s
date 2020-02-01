@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
     public GameObject B_Ready_2;
 
     public ParticleSystem sparks;
+    public int score = 0;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -101,6 +102,7 @@ void Update()
                     if (raycastHit.transform.gameObject.name == "RedHole(Clone)")
                     {
                         // TODO: el gameobject es el tornillo red. CHISPAS
+                        score++;
                         currentRedSparks = Instantiate(sparks, raycastHit.transform.transform.position, Quaternion.identity);
                         currentRedSparks.Play();
 
@@ -121,6 +123,7 @@ void Update()
                     if (raycastHit.transform.gameObject.name == "BlueHole(Clone)")
                     {
                         // TODO: tornillo blue quan es fica. CHISPAS
+                        score++;
                         currentBlueSparks = Instantiate(sparks, raycastHit.transform.position, Quaternion.identity);
                         currentBlueSparks.Play();
 

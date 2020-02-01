@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ObjectController : MonoBehaviour
 {
@@ -23,6 +24,7 @@ public class ObjectController : MonoBehaviour
     public float GameplayTimer = 20.0f;
 
     public GameObject endScreenObj;
+    public Text scoreText;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -55,6 +57,7 @@ public class ObjectController : MonoBehaviour
                 gameController.gameState = GameController.GameState.endscreen;
                 // TODO: AQUI ANEM AL ESTAT DE ACABAR EL JOC. passa 1 cop nomes per aqui
                 endScreenObj.SetActive(true);
+                scoreText.text = "you have repaired " + playerController.score + " screens in 20s!"; 
 
             }
         }
