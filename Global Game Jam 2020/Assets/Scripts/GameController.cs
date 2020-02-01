@@ -164,7 +164,19 @@ public class GameController : MonoBehaviour
 
     void PrepareNextObject()
     {
-        objectBehaviour.height = (uint)Random.Range(0, (int)screwdriverController.totalHeights);
+        uint nextObjectHeight = (uint)Random.Range(0, (int)screwdriverController.totalHeights);
+        if (nextObjectHeight == objectBehaviour.height)
+        {
+            if (nextObjectHeight > 0)
+            {
+                --nextObjectHeight;
+            }
+            else
+            {
+                ++nextObjectHeight;
+            }
+        }
+        objectBehaviour.height = nextObjectHeight;
         switch (objectBehaviour.height)
         {
             case 0:
@@ -177,8 +189,10 @@ public class GameController : MonoBehaviour
                 objectBehaviour.GetComponent<MeshFilter>().mesh = objectBehaviour.mesh3;
                 return;
         }
-        // TODO: finish positioning...
-        objectBehaviour.transform.position = new Vector3(0.0f, objectInitialHeight, 0.0f);
+
+        Destroy(objectBehaviour.transform.GetComponent<BoxCollider>());
+        objectBehaviour.transform.gameObject.AddComponent<BoxCollider>();
+        objectBehaviour.transform.position = new Vector3(0.0f, objectInitialHeight, 0.0f); // TODO: finish positioning...
 
         gameState = GameState.moveScrewdriverDown;
     }
