@@ -18,6 +18,8 @@ public class ObjectController : MonoBehaviour
 
     public AudioClip flipAudioClipLeft;
     public AudioClip flipAudioClipRight;
+
+    public float GameplayTimer = 20.0f;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -36,6 +38,10 @@ public class ObjectController : MonoBehaviour
 
     void Update()
     {
+        GameplayTimer -= Time.deltaTime;
+        if (GameplayTimer <= 0.0f)
+            GameplayTimer = 0.0f;
+
         if (interpolate)
         {
             float t = timer / interpolateSeconds;
