@@ -70,11 +70,10 @@ public class ObjectBehaviour : MonoBehaviour
                             break;
                         case 2:
                             z = halfWidthDistance; // forward
-                            spawnRotation = Quaternion.AngleAxis(90.0f, -Vector3.up);
                             break;
                         case 3:
                             z = -halfWidthDistance; // back
-                            spawnRotation = Quaternion.AngleAxis(90.0f, Vector3.up);
+                            spawnRotation = Quaternion.AngleAxis(90.0f, -Vector3.up);
                             break;
                     }
 
@@ -83,7 +82,7 @@ public class ObjectBehaviour : MonoBehaviour
                         if ((i == height - 1 && j == 3 && !hasSpawned))
                         {
                             z *= -1.0f;
-                            spawnRotation = Quaternion.AngleAxis(90.0f, Vector3.up);
+                            spawnRotation = Quaternion.AngleAxis(90.0f, -Vector3.up);
                         }
                         else
                         {
