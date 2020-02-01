@@ -22,12 +22,16 @@ public class PlayerController : MonoBehaviour
 
     public GameObject B_Ready_1;
     public GameObject B_Ready_2;
+
+    public ParticleSystem sparks;
     #endregion
 
     #region PRIVATE_VARIABLES
     private bool objectReady;
     private bool screwdriverReady;
     private bool animate;
+    private ParticleSystem currentRedSparks = null;
+    private ParticleSystem currentBlueSparks = null;
     #endregion
 
     private void Start()
@@ -96,6 +100,10 @@ void Update()
                 {
                     if (raycastHit.transform.gameObject.name == "RedHole(Clone)")
                     {
+                        // TODO: el gameobject es el tornillo red. CHISPAS
+                        currentRedSparks = Instantiate(sparks, raycastHit.transform.transform.position, Quaternion.identity);
+                        currentRedSparks.Play();
+
                         ClawRotation.instance.DrillRight();
 
                         Debug.Log("Red hole hit");
@@ -112,6 +120,10 @@ void Update()
                 {
                     if (raycastHit.transform.gameObject.name == "BlueHole(Clone)")
                     {
+                        // TODO: tornillo blue quan es fica. CHISPAS
+                        currentBlueSparks = Instantiate(sparks, raycastHit.transform.position, Quaternion.identity);
+                        currentBlueSparks.Play();
+
                         ClawRotation.instance.DrillLeft();
 
                         Debug.Log("Blue hole hit");

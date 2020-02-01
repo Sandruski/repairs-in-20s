@@ -71,6 +71,7 @@ public class GameController : MonoBehaviour
                 PrepareNextObject();
                 break;
             case GameState.endscreen:
+                UpdateEndScreen();
                 break;
         }
     }
@@ -233,5 +234,10 @@ public class GameController : MonoBehaviour
         objectBehaviour.transform.position = new Vector3(0.0f, objectInitialHeight, 0.0f); // TODO: finish positioning...
 
         gameState = GameState.moveScrewdriverDown;
+    }
+
+    void UpdateEndScreen()
+    {
+        // TODO: AQUI ESTA LA END SCREEN
     }
 }

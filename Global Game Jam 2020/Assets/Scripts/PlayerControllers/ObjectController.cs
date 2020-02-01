@@ -51,6 +51,7 @@ public class ObjectController : MonoBehaviour
             {
                 GameplayTimer = 0.0f;
                 gameController.gameState = GameController.GameState.endscreen;
+                // TODO: AQUI ANEM AL ESTAT DE ACABAR EL JOC. passa 1 cop nomes per aqui
             }
         }
 

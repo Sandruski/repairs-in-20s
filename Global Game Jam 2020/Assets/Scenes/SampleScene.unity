@@ -443,6 +443,7 @@ MonoBehaviour:
   gameController: {fileID: 151487971}
   B_Ready_1: {fileID: 975154319}
   B_Ready_2: {fileID: 558088832}
+  sparks: {fileID: 4847148720858677230, guid: e92384874c5b07443a0cae508ddaae4a, type: 3}
 --- !u!114 &151487971
 MonoBehaviour:
   m_ObjectHideFlags: 0
