@@ -15,6 +15,7 @@ public class ObjectController : MonoBehaviour
 
     public InputManager inputManager;
     public PlayerController playerController;
+    public GameController gameController;
 
     public AudioClip flipAudioClipLeft;
     public AudioClip flipAudioClipRight;
@@ -38,9 +39,15 @@ public class ObjectController : MonoBehaviour
 
     void Update()
     {
-        GameplayTimer -= Time.deltaTime;
-        if (GameplayTimer <= 0.0f)
-            GameplayTimer = 0.0f;
+        if (gameController.gameState == GameController.GameState.play)
+        {
+            GameplayTimer -= Time.deltaTime;
+            if (GameplayTimer <= 0.0f)
+            {
+                GameplayTimer = 0.0f;
+                gameController.gameState = GameController.GameState.endscreen;
+            }
+        }
 
         if (interpolate)
         {

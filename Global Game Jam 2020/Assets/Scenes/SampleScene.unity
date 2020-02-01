@@ -271,6 +271,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   screwdriverController: {fileID: 1171637989}
   objectController: {fileID: 1704243879}
+  objectBehaviour: {fileID: 1922146905}
   inputManager: {fileID: 151487967}
   gameController: {fileID: 151487971}
 --- !u!114 &151487971
@@ -285,7 +286,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33bf6c9362f5ef645a5cb94c4f54b5e2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameState: 1
+  gameState: 0
   inputManager: {fileID: 151487967}
   screwdriverController: {fileID: 1171637989}
   objectController: {fileID: 1704243879}
@@ -1759,7 +1760,7 @@ PrefabInstance:
     - target: {fileID: 1883344715212173074, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 1883344715212173074, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
@@ -1826,6 +1827,11 @@ PrefabInstance:
       propertyPath: playerController
       value: 
       objectReference: {fileID: 151487970}
+    - target: {fileID: 1883344715212173086, guid: 37aeedc58ded58f4da435bc0668077b4,
+        type: 3}
+      propertyPath: gameController
+      value: 
+      objectReference: {fileID: 151487971}
     - target: {fileID: 1883344715212173087, guid: 37aeedc58ded58f4da435bc0668077b4,
         type: 3}
       propertyPath: screwdriverController
