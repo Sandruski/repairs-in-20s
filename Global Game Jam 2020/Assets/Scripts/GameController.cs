@@ -150,7 +150,6 @@ public class GameController : MonoBehaviour
 
     void MoveObjectSide()
     {
-        objectController.GetComponent<Rigidbody>().isKinematic = true;
-        // TODO
+        objectController.GetComponent<Rigidbody>().AddForce(Vector3.right, ForceMode.Impulse);
     }
 }

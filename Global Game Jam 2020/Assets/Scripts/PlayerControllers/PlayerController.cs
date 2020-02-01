@@ -16,7 +16,9 @@ public class PlayerController : MonoBehaviour
 
     public ScrewdriverController screwdriverController;
     public ObjectController objectController;
+    public ObjectBehaviour objectBehaviour;
     public InputManager inputManager;
+    public GameController gameController;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -30,10 +32,16 @@ public class PlayerController : MonoBehaviour
         if (animate)
         {
             Debug.Log("SCREWING...");
-            // If animation is finished...
-            // TODO: animate = false;
+
             inputManager.SetVibration(InputManager.Gamepads.Gamepad_1, 0.5f, 0.5f);
             inputManager.SetVibration(InputManager.Gamepads.Gamepad_2, 0.5f, 0.5f);
+
+            // If animation is finished...
+            // TODO: animate = false;
+            if (objectBehaviour.AreAllHolesScrewed())
+            {
+                gameController.gameState = GameController.GameState.moveObjectSide;
+            }
         }
         else
         {
@@ -73,6 +81,7 @@ public class PlayerController : MonoBehaviour
                     if (raycastHit.transform.gameObject.name == "RedHole(Clone)")
                     {
                         Debug.Log("RED HOLE HIT");
+                        raycastHit.transform.gameObject.GetComponent<HoleBehaviour>().screwed = true;
                         // TODO: red screwdriver animation
                         animate = true;
                     }
@@ -87,6 +96,7 @@ public class PlayerController : MonoBehaviour
                     if (raycastHit.transform.gameObject.name == "BlueHole(Clone)")
                     {
                         Debug.Log("BLUE HOLE HIT");
+                        raycastHit.transform.gameObject.GetComponent<HoleBehaviour>().screwed = true;
                         // TODO: blue screwdriver animation
                         animate = true;
                     }

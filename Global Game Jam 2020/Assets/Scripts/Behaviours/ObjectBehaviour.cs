@@ -97,6 +97,21 @@ public class ObjectBehaviour : MonoBehaviour
         holes.Clear();
     }
 
+    public bool AreAllHolesScrewed()
+    {
+        uint count = 0;
+
+        foreach (GameObject hole in holes)
+        {
+            if (hole.GetComponent<HoleBehaviour>().screwed)
+            {
+                ++count;
+            }
+        }
+
+        return count == holes.Count;
+    }
+
     void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.name == "Floor")
