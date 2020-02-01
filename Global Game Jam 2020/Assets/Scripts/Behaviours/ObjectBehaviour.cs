@@ -58,19 +58,24 @@ public class ObjectBehaviour : MonoBehaviour
                     float x = 0.0f;
                     float z = 0.0f;
 
+                    Quaternion spawnRotation = Quaternion.identity;
+
                     switch (j)
                     {
                         case 0:
-                            x = halfWidthDistance; // left
+                            x = halfWidthDistance; // right
+                            spawnRotation = Quaternion.AngleAxis(180.0f, Vector3.up);
                             break;
                         case 1:
-                            x = -halfWidthDistance; // right
+                            x = -halfWidthDistance; // left
                             break;
                         case 2:
                             z = halfWidthDistance; // forward
+                            spawnRotation = Quaternion.AngleAxis(90.0f, -Vector3.up);
                             break;
                         case 3:
                             z = -halfWidthDistance; // back
+                            spawnRotation = Quaternion.AngleAxis(90.0f, Vector3.up);
                             break;
                     }
 
@@ -90,11 +95,6 @@ public class ObjectBehaviour : MonoBehaviour
                     hasSpawned = true;
 
                     Vector3 spawnPosition = transform.position - new Vector3(0.0f, size.y / 2.0f, 0.0f) + new Vector3(x, y, z);
-                    Quaternion spawnRotation = Quaternion.identity;
-                    if (z != 0.0f)
-                    {
-                        spawnRotation = Quaternion.AngleAxis(90.0f, Vector3.up);
-                    }
                     GameObject hole = null;
                     if (Random.value <= redProbability)
                     {
