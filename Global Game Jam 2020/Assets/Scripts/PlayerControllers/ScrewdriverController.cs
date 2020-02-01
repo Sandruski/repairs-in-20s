@@ -19,6 +19,9 @@ public class ScrewdriverController : MonoBehaviour
 
     public GameObject redScrewdriver;
     public GameObject blueScrewdriver;
+
+    public AudioClip drillDownClip;
+    public AudioClip drillUpClip;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -27,7 +30,13 @@ public class ScrewdriverController : MonoBehaviour
     private float timer;
     private bool interpolate;
     private uint currentHeight;
+    private AudioSource audioSource;
     #endregion
+
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -58,6 +67,9 @@ public class ScrewdriverController : MonoBehaviour
                     timer = 0.0f;
                     interpolate = true;
                     currentHeight = desiredHeight;
+
+                    //PLAY DRILL UP
+                    audioSource.PlayOneShot(drillUpClip);
                 }
             }
             else if (Input.GetKeyDown(KeyCode.S)
@@ -71,6 +83,9 @@ public class ScrewdriverController : MonoBehaviour
                     timer = 0.0f;
                     interpolate = true;
                     currentHeight = desiredHeight;
+
+                    //PLAY DRILL UP
+                    audioSource.PlayOneShot(drillDownClip);
                 }
             }
         }
