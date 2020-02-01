@@ -8,7 +8,8 @@ public class DollyMovement : MonoBehaviour
     CinemachineTrackedDolly dolly;
 
     public bool start = false;
-
+    public bool isAtEnd = false;
+    public bool isAtStart = true;
     void Start()
     {
         virtualCameraPrefab = GetComponent<CinemachineVirtualCamera>();
@@ -27,6 +28,7 @@ public class DollyMovement : MonoBehaviour
                 {
                     start = false;
                     dolly.m_PathPosition = 0.0f;
+                    isAtStart = true;
                 }
             }
             if (_ConstantForce >= 0.0f)
@@ -35,6 +37,7 @@ public class DollyMovement : MonoBehaviour
                 {
                     dolly.m_PathPosition = 3.0f;
                     start = false;
+                    isAtEnd = true;
                 }
             }
         }
@@ -44,12 +47,16 @@ public class DollyMovement : MonoBehaviour
     {
         _ConstantForce = -Mathf.Abs(_ConstantForce);
         start = true;
+        isAtStart = false;
+        isAtEnd = false;
     }
 
     public void OutofTV()
     {
         _ConstantForce = Mathf.Abs(_ConstantForce);
         start = true;
+        isAtStart = false;
+        isAtEnd = false;
     }
 
 }
