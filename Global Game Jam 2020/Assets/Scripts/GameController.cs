@@ -123,8 +123,7 @@ public class GameController : MonoBehaviour
         {
             float t = timer / screwdriverDownInterpolateSeconds;
             // screwdriverController.transform.position = Vector3.Lerp(fromPosition, toPosition, t);
-
-            Debug.Log("FROMPOS" + fromPosition1 + "TOPOS" + toPosition1);
+            
             guide1.transform.localPosition = Vector3.Lerp(fromPosition1, toPosition1, t);
             guide2.transform.localPosition = Vector3.Lerp(fromPosition2, toPosition2, t);
 
@@ -233,6 +232,7 @@ public class GameController : MonoBehaviour
                 return;
         }
 
+        Debug.Log("Destroy and add box collider");
         Destroy(objectBehaviour.transform.GetComponent<BoxCollider>());
         objectBehaviour.transform.gameObject.AddComponent<BoxCollider>();
         objectBehaviour.transform.position = new Vector3(0.0f, objectInitialHeight, 0.0f); // TODO: finish positioning...

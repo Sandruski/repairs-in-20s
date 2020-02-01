@@ -90,13 +90,13 @@ void Update()
                 RaycastHit raycastHit;
                 if (Physics.Raycast(
                     screwdriverController.redScrewdriver.transform.position,
-                    (objectController.transform.position - screwdriverController.redScrewdriver.transform.position).normalized, 
+                    Vector3.left, 
                     out raycastHit,
                     Mathf.Infinity))
                 {
+                    Debug.Log(raycastHit.transform.gameObject.name);
                     if (raycastHit.transform.gameObject.name == "RedHole(Clone)")
                     {
-                        ClawRotation.instance.DrillLeft();
                         ClawRotation.instance.DrillRight();
                         B_Ready_2.active = !B_Ready_2.active;
 
@@ -109,14 +109,14 @@ void Update()
 
                 if (Physics.Raycast(
                     screwdriverController.blueScrewdriver.transform.position,
-                    (objectController.transform.position - screwdriverController.blueScrewdriver.transform.position).normalized,
+                    Vector3.right,
                     out raycastHit,
                     Mathf.Infinity))
                 {
+                    Debug.Log(raycastHit.transform.gameObject.name);
                     if (raycastHit.transform.gameObject.name == "BlueHole(Clone)")
                     {
                         ClawRotation.instance.DrillLeft();
-                        ClawRotation.instance.DrillRight();
                         B_Ready_1.active = !B_Ready_1.active;
 
                         Debug.Log("BLUE HOLE HIT");
@@ -127,5 +127,13 @@ void Update()
                 }
             }
         }
+    }
+
+    private void OnDrawGizmos()
+    {
+        Debug.DrawLine(screwdriverController.redScrewdriver.transform.position,
+            screwdriverController.redScrewdriver.transform.position + Vector3.left * 5.0f, Color.red);
+        Debug.DrawLine(screwdriverController.blueScrewdriver.transform.position,
+            screwdriverController.blueScrewdriver.transform.position + Vector3.right * 5.0f, Color.blue);
     }
 }

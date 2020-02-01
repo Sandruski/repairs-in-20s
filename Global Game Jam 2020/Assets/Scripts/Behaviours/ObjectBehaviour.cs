@@ -51,8 +51,6 @@ public class ObjectBehaviour : MonoBehaviour
                 if (Random.value <= spawnProbability
                     || (i == height - 1 && j == 3 && !hasSpawned))
                 {
-                    hasSpawned = true;
-
                     float halfHeightDistance = screwdriverController.heightDistance / 2.0f;
                     float y = (i + 1) * halfHeightDistance;
 
@@ -78,10 +76,19 @@ public class ObjectBehaviour : MonoBehaviour
 
                     if (z == -halfWidthDistance)
                     {
-                        // Not forward!
-                        continue;
+                        if ((i == height - 1 && j == 3 && !hasSpawned))
+                        {
+                            z *= -1.0f;
+                        }
+                        else
+                        {
+                            // Not forward!
+                            continue;
+                        }
                     }
-                    
+
+                    hasSpawned = true;
+
                     Vector3 spawnPosition = transform.position - new Vector3(0.0f, size.y / 2.0f, 0.0f) + new Vector3(x, y, z);
                     Quaternion spawnRotation = Quaternion.identity;
                     if (z != 0.0f)
