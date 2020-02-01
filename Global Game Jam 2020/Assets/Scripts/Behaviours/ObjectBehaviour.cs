@@ -5,26 +5,36 @@ using UnityEngine;
 public class ObjectBehaviour : MonoBehaviour
 {
     #region PUBLIC_VARIABLES
+    public bool TouchGround
+    {
+        get { return touchGround; }
+    }
+
     public uint height;
-    public float widthDistance;
 
     public float spawnProbability;
     public float redProbability;
 
     public ScrewdriverController screwdriverController;
+
+    [HideInInspector]
+    public Vector3 size;
     #endregion
 
     #region PRIVATE_VARIABLES
+    private bool touchGround = false;
     public List<GameObject> holes;
     #endregion
 
     void Start()
     {
         holes = new List<GameObject>();
+        size = Vector3.Scale(transform.localScale, GetComponent<MeshFilter>().mesh.bounds.size);
     }
 
     public void SpawnHoles()
     {
+        touchGround = false;
         RemoveHoles();
 
         bool hasSpawned = false;
@@ -41,7 +51,7 @@ public class ObjectBehaviour : MonoBehaviour
                     float halfHeightDistance = screwdriverController.heightDistance / 2.0f;
                     float y = i * halfHeightDistance;
 
-                    float halfWidthDistance = widthDistance / 2.0f;
+                    float halfWidthDistance = size.x / 2.0f;
                     float x = 0.0f;
                     float z = 0.0f;
 
@@ -85,5 +95,13 @@ public class ObjectBehaviour : MonoBehaviour
         }
 
         holes.Clear();
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.name == "Floor")
+        {
+            touchGround = true;
+        }
     }
 }

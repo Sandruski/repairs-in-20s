@@ -97,6 +97,7 @@ public class GameController : MonoBehaviour
             {
                 interpolate = false;
                 objectBehaviour.SpawnHoles();
+                objectController.GetComponent<Rigidbody>().isKinematic = false;
                 gameState = GameState.moveObjectDown;
             }
             else
@@ -141,10 +142,8 @@ public class GameController : MonoBehaviour
 
     void MoveObjectDown()
     {
-        objectController.GetComponent<Rigidbody>().isKinematic = false;
-        if (objectController.GetComponent<Rigidbody>().velocity == Vector3.zero)
+        if (objectBehaviour.TouchGround)
         {
-            Debug.Log("PLAY");
             gameState = GameState.play;
         }
     }
