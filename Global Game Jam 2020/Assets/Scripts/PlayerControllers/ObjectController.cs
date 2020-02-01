@@ -31,7 +31,7 @@ public class ObjectController : MonoBehaviour
     private AudioSource audioSource;
     #endregion
 
-    private void Start()
+    void Start()
     {
         audioSource = GetComponent<AudioSource>();
     }
