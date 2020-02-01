@@ -291,6 +291,7 @@ MonoBehaviour:
   screwdriverController: {fileID: 1171637989}
   objectController: {fileID: 1704243879}
   objectBehaviour: {fileID: 1922146905}
+  dollyMovement: {fileID: 848979511}
   objectInitialHeight: 6
   objectsRepaired: 0
   screwdriverDownInterpolateSeconds: 0.8
