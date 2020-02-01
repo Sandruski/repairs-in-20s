@@ -31,13 +31,8 @@ public class UIManager : MonoBehaviour
         Application.Quit();
     }
 
-    public void Credits()
+    public void OnClickCreditsButton()
     {
-
-    }
-
-    public void MainMenu()
-    {
-        
+        SceneManager.LoadScene("CreditsScene", LoadSceneMode.Single);
     }
 }
