@@ -53,8 +53,6 @@ void Update()
                 objectController.GameplayTimer += 5.0f;
             }
 
-            objectReady = screwdriverReady = false;
-
             animate = false;
         }
         else
@@ -122,6 +120,7 @@ void Update()
                     }
                 }
 
+                objectReady = screwdriverReady = false;
                 B_Ready_2.active = B_Ready_1.active = false;
             }
         }
