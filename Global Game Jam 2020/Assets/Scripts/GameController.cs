@@ -164,8 +164,19 @@ public class GameController : MonoBehaviour
 
     void PrepareNextObject()
     {
-        int nextObjectHeight = Random.Range(0, (int)screwdriverController.totalHeights);
-        objectBehaviour.height = (uint)nextObjectHeight;
+        objectBehaviour.height = (uint)Random.Range(0, (int)screwdriverController.totalHeights);
+        switch (objectBehaviour.height)
+        {
+            case 0:
+                objectBehaviour.GetComponent<MeshFilter>().mesh = objectBehaviour.mesh1;
+                return;
+            case 1:
+                objectBehaviour.GetComponent<MeshFilter>().mesh = objectBehaviour.mesh2;
+                return;
+            case 2:
+                objectBehaviour.GetComponent<MeshFilter>().mesh = objectBehaviour.mesh3;
+                return;
+        }
         // TODO: finish positioning...
         objectBehaviour.transform.position = new Vector3(0.0f, objectInitialHeight, 0.0f);
 

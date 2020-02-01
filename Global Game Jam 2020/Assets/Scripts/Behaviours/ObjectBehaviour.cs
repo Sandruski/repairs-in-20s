@@ -15,6 +15,10 @@ public class ObjectBehaviour : MonoBehaviour
     public float spawnProbability;
     public float redProbability;
 
+    public Mesh mesh1;
+    public Mesh mesh2;
+    public Mesh mesh3;
+
     public ScrewdriverController screwdriverController;
 
     [HideInInspector]
