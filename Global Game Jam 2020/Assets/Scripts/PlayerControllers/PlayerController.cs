@@ -96,11 +96,13 @@ void Update()
                 {
                     if (raycastHit.transform.gameObject.name == "RedHole(Clone)")
                     {
+                        ClawRotation.instance.DrillLeft();
+                        ClawRotation.instance.DrillRight();
+                        B_Ready_2.active = !B_Ready_2.active;
+
                         Debug.Log("RED HOLE HIT");
                         raycastHit.transform.gameObject.GetComponent<HoleBehaviour>().screwed = true;
                         // TODO: red screwdriver animation
-                        ClawRotation.instance.DrillLeft();
-                        ClawRotation.instance.DrillLeft();
                         animate = true;
                     }
                 }
@@ -113,6 +115,10 @@ void Update()
                 {
                     if (raycastHit.transform.gameObject.name == "BlueHole(Clone)")
                     {
+                        ClawRotation.instance.DrillLeft();
+                        ClawRotation.instance.DrillRight();
+                        B_Ready_1.active = !B_Ready_1.active;
+
                         Debug.Log("BLUE HOLE HIT");
                         raycastHit.transform.gameObject.GetComponent<HoleBehaviour>().screwed = true;
                         // TODO: blue screwdriver animation
