@@ -167,6 +167,7 @@ public class GameController : MonoBehaviour
             if (timer >= screwdriverUpInterpolateSeconds)
             {
                 interpolate = false;
+                objectController.GetComponent<Rigidbody>().isKinematic = false;
                 gameState = GameState.moveObjectSide;
             }
             else
@@ -194,7 +195,7 @@ public class GameController : MonoBehaviour
     }
 
     void MoveObjectSide()
-    {
+    {      
         objectController.GetComponent<Rigidbody>().AddForce(Vector3.right, ForceMode.Impulse);
     }
 
