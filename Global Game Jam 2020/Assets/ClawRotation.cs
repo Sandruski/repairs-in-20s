@@ -62,13 +62,13 @@ public class ClawRotation : MonoBehaviour
         }
     }
 
-    void DrillLeft()
+    public void DrillLeft()
     {
         drill_L = true;
         audioSource.PlayOneShot(drillClip);
     }
 
-    void DrillRight()
+    public void DrillRight()
     {
         drill_R = true;
         audioSource.PlayOneShot(drillClip);
