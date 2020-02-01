@@ -25,6 +25,8 @@ public class GameController : MonoBehaviour
 
     public float objectInitialHeight;
 
+    public GameObject endScreenObj;
+
     [HideInInspector]
     public uint objectsRepaired;
     #endregion

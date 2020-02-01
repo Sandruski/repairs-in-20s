@@ -39,4 +39,9 @@ public class UIManager : MonoBehaviour
     {
         SceneManager.LoadScene("CreditsScene", LoadSceneMode.Single);
     }
+
+    public void OnClickMainMenuButton()
+    {
+        SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+    }
 }

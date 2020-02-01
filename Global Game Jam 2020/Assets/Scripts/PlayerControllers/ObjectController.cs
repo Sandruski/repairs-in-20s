@@ -21,6 +21,8 @@ public class ObjectController : MonoBehaviour
     public AudioClip flipAudioClipRight;
 
     public float GameplayTimer = 20.0f;
+
+    public GameObject endScreenObj;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -52,6 +54,8 @@ public class ObjectController : MonoBehaviour
                 GameplayTimer = 0.0f;
                 gameController.gameState = GameController.GameState.endscreen;
                 // TODO: AQUI ANEM AL ESTAT DE ACABAR EL JOC. passa 1 cop nomes per aqui
+                endScreenObj.SetActive(true);
+
             }
         }
 
