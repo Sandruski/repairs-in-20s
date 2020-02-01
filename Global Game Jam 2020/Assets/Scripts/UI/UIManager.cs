@@ -17,7 +17,6 @@ public class UIManager : MonoBehaviour
     public void Play()
     {
         menu.SetActive(false);
-        gameController.gameState = GameController.GameState.play;
         dolly.OutofTV();
     }
 

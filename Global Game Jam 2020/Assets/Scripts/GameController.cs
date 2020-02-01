@@ -21,6 +21,7 @@ public class GameController : MonoBehaviour
     public ScrewdriverController screwdriverController;
     public ObjectController objectController;
     public ObjectBehaviour objectBehaviour;
+    public DollyMovement dollyMovement;
 
     public float objectInitialHeight;
 
@@ -38,6 +39,7 @@ public class GameController : MonoBehaviour
         switch(gameState)
         {
             case GameState.startscreen:
+                UpdateStartScreen();
                 break;
             case GameState.moveScrewdriverDown:
                 UpdateMoveScrewdriverDown();
@@ -63,6 +65,7 @@ public class GameController : MonoBehaviour
 
     void UpdateStartScreen()
     {
+        /*
         if (Input.GetKeyDown(KeyCode.Return)
             || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.A)
             || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.B)
@@ -84,7 +87,8 @@ public class GameController : MonoBehaviour
         if (objectReady && screwdriverReady)
         {
             gameState = GameState.play;
-        }
+        }*/
+
     }
 
     public float screwdriverDownInterpolateSeconds;
