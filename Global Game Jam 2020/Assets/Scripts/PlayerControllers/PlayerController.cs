@@ -46,16 +46,13 @@ void Update()
         {
             Debug.Log("SCREWING...");
 
-            inputManager.SetVibration(InputManager.Gamepads.Gamepad_1, 0.5f, 0.5f);
-            inputManager.SetVibration(InputManager.Gamepads.Gamepad_2, 0.5f, 0.5f);
-
-            // If animation is finished...
-            // TODO: animate = false;
-            if (objectBehaviour.AreAllHolesScrewed())
+            if (objectBehaviour.AreAllHolesRemoved())
             {
                 ++gameController.objectsRepaired;
                 gameController.gameState = GameController.GameState.moveObjectSide;
             }
+
+            animate = false;
         }
         else
         {
@@ -101,8 +98,8 @@ void Update()
                         B_Ready_2.active = !B_Ready_2.active;
 
                         Debug.Log("RED HOLE HIT");
-                        raycastHit.transform.gameObject.GetComponent<HoleBehaviour>().screwed = true;
                         // TODO: red screwdriver animation
+                        objectBehaviour.RemoveHole(raycastHit.transform.gameObject);
                         animate = true;
                     }
                 }
@@ -120,8 +117,8 @@ void Update()
                         B_Ready_1.active = !B_Ready_1.active;
 
                         Debug.Log("BLUE HOLE HIT");
-                        raycastHit.transform.gameObject.GetComponent<HoleBehaviour>().screwed = true;
                         // TODO: blue screwdriver animation
+                        objectBehaviour.RemoveHole(raycastHit.transform.gameObject);
                         animate = true;
                     }
                 }

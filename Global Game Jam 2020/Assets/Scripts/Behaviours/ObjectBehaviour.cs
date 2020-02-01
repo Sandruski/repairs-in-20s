@@ -40,7 +40,6 @@ public class ObjectBehaviour : MonoBehaviour
     public void SpawnHoles()
     {
         touchGround = false;
-        RemoveHoles();
 
         bool hasSpawned = false;
 
@@ -58,19 +57,24 @@ public class ObjectBehaviour : MonoBehaviour
                     float x = 0.0f;
                     float z = 0.0f;
 
+                    Quaternion spawnRotation = Quaternion.identity;
+
                     switch (j)
                     {
                         case 0:
-                            x = halfWidthDistance; // left
+                            x = halfWidthDistance; // right
+                            spawnRotation = Quaternion.AngleAxis(180.0f, Vector3.up);
                             break;
                         case 1:
-                            x = -halfWidthDistance; // right
+                            x = -halfWidthDistance; // left
                             break;
                         case 2:
                             z = halfWidthDistance; // forward
+                            spawnRotation = Quaternion.AngleAxis(90.0f, -Vector3.up);
                             break;
                         case 3:
                             z = -halfWidthDistance; // back
+                            spawnRotation = Quaternion.AngleAxis(90.0f, Vector3.up);
                             break;
                     }
 
@@ -90,11 +94,6 @@ public class ObjectBehaviour : MonoBehaviour
                     hasSpawned = true;
 
                     Vector3 spawnPosition = transform.position - new Vector3(0.0f, size.y / 2.0f, 0.0f) + new Vector3(x, y, z);
-                    Quaternion spawnRotation = Quaternion.identity;
-                    if (z != 0.0f)
-                    {
-                        spawnRotation = Quaternion.AngleAxis(90.0f, Vector3.up);
-                    }
                     GameObject hole = null;
                     if (Random.value <= redProbability)
                     {
@@ -110,9 +109,15 @@ public class ObjectBehaviour : MonoBehaviour
         }
     }
 
+    public void RemoveHole(GameObject hole)
+    {
+        holes.Remove(hole);
+        Destroy(hole);
+    }
+
     public void RemoveHoles()
     {
-        foreach (GameObject hole in holes)
+        foreach(GameObject hole in holes)
         {
             Destroy(hole);
         }
@@ -120,19 +125,9 @@ public class ObjectBehaviour : MonoBehaviour
         holes.Clear();
     }
 
-    public bool AreAllHolesScrewed()
+    public bool AreAllHolesRemoved()
     {
-        uint count = 0;
-
-        foreach (GameObject hole in holes)
-        {
-            if (hole.GetComponent<HoleBehaviour>().screwed)
-            {
-                ++count;
-            }
-        }
-
-        return count == holes.Count;
+        return holes.Count == 0;
     }
 
     void OnCollisionEnter(Collision collision)
