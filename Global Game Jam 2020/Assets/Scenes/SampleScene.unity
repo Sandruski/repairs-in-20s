@@ -3360,7 +3360,7 @@ GameObject:
   - component: {fileID: 1213152730}
   - component: {fileID: 1213152729}
   m_Layer: 0
-  m_Name: Cube
+  m_Name: FakeFloor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5204,9 +5204,9 @@ MonoBehaviour:
   height: 1
   spawnProbability: 0.4
   redProbability: 0.5
-  mesh1: {fileID: 8659943070623925175, guid: 6d3d2ac0dce775742ae403557968774f, type: 3}
+  mesh1: {fileID: 5582658842733132069, guid: d77d6b6b4c9fb63479f7127ad05de6a3, type: 3}
   mesh2: {fileID: -2971176557499988169, guid: 6ccc02d26e3eca642ac0767ee40bfce7, type: 3}
-  mesh3: {fileID: -2735251984287490357, guid: 0d50ad4e10a20a84ab05fbc817ea9963, type: 3}
+  mesh3: {fileID: 8309474951070910916, guid: 6c49aefb381087d439a1a1b32587e874, type: 3}
   screwdriverController: {fileID: 1171637989}
   size: {x: 0, y: 0, z: 0}
   holes: []
@@ -5459,7 +5459,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8182481882492199843}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.025, z: 0}
+  m_LocalPosition: {x: 0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2832389999912840990}
@@ -5474,7 +5474,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8182481881730406528}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0, y: 0.025, z: 0}
+  m_LocalPosition: {x: -0, y: 1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 2832389999149995069}

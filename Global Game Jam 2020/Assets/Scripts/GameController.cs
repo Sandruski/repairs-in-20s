@@ -13,6 +13,7 @@ public class GameController : MonoBehaviour
         moveScrewdriverUp, 
         moveObjectSide,
         prepareNextObject,
+        prepareNextObject2,
         endscreen
     };
     public GameState gameState;
@@ -78,6 +79,9 @@ public class GameController : MonoBehaviour
                 break;
             case GameState.prepareNextObject:
                 PrepareNextObject();
+                break;
+            case GameState.prepareNextObject2:
+                PrepareNextObject2();
                 break;
             case GameState.endscreen:
                 UpdateEndScreen();
@@ -149,17 +153,8 @@ public class GameController : MonoBehaviour
             if (timer >= screwdriverDownInterpolateSeconds)
             {
                 interpolate = false;
-                if (!firstGame)
-                {
-                    objectBehaviour.RemoveHoles();
-                    objectBehaviour.SpawnHoles();
-                    objectController.GetComponent<Rigidbody>().isKinematic = false;
-                    gameState = GameState.moveObjectDown;
-                }
-                else
-                {
-                    gameState = GameState.play;
-                }
+                timer = 0.0f;
+                gameState = GameState.play;
             }
             else
             {
@@ -188,6 +183,7 @@ public class GameController : MonoBehaviour
             if (timer >= screwdriverUpInterpolateSeconds)
             {
                 interpolate = false;
+                timer = 0.0f;
                 objectController.GetComponent<Rigidbody>().isKinematic = false;
                 gameState = GameState.moveObjectSide;
                 audioSrc.clip = audioClip;
@@ -201,9 +197,9 @@ public class GameController : MonoBehaviour
         else
         {
             fromPosition1 = guide1.transform.localPosition;
-            toPosition1 = new Vector3(guide1.transform.localPosition.x, 0.025f, guide1.transform.localPosition.z);
+            toPosition1 = new Vector3(guide1.transform.localPosition.x, 1.0f, guide1.transform.localPosition.z);
             fromPosition2 = guide2.transform.localPosition;
-            toPosition2 = new Vector3(guide2.transform.localPosition.x, 0.025f, guide2.transform.localPosition.z);
+            toPosition2 = new Vector3(guide2.transform.localPosition.x, 1.0f, guide2.transform.localPosition.z);
             timer = 0.0f;
             interpolate = true;
         }
@@ -213,23 +209,33 @@ public class GameController : MonoBehaviour
     {
         if (objectBehaviour.TouchGround)
         {
-            gameState = GameState.play;
+            gameState = GameState.moveScrewdriverDown;
         }
     }
 
     void MoveObjectSide()
     {      
-        objectController.GetComponent<Rigidbody>().AddForce(Vector3.right, ForceMode.Impulse);
-        //startSpinning = true;
-        //gameState = GameState.prepareNextObject;
+        objectController.GetComponent<Rigidbody>().AddForce(1.0f, 0.0f, 0.0f, ForceMode.Impulse);
+        if (objectBehaviour.Invisible)
+        {
+            gameState = GameState.prepareNextObject;
+        }
     }
 
     void PrepareNextObject()
     {
-        uint nextObjectHeight = (uint)Random.Range(0, (int)screwdriverController.totalHeights);
+        Destroy(objectBehaviour.transform.GetComponent<Rigidbody>());
+        Destroy(objectBehaviour.transform.GetComponent<BoxCollider>());
+
+        gameState = GameState.prepareNextObject2;
+    }
+
+    void PrepareNextObject2()
+    {
+        uint nextObjectHeight = (uint)Random.Range(1, (int)screwdriverController.totalHeights + 1);
         if (nextObjectHeight == objectBehaviour.height)
         {
-            if (nextObjectHeight > 0)
+            if (nextObjectHeight > 1)
             {
                 --nextObjectHeight;
             }
@@ -239,25 +245,28 @@ public class GameController : MonoBehaviour
             }
         }
         objectBehaviour.height = nextObjectHeight;
+        Debug.Log("Next object height: " + nextObjectHeight);
         switch (objectBehaviour.height)
         {
             case 0:
                 objectBehaviour.GetComponent<MeshFilter>().mesh = objectBehaviour.mesh1;
-                return;
+                break;
             case 1:
                 objectBehaviour.GetComponent<MeshFilter>().mesh = objectBehaviour.mesh2;
-                return;
+                break;
             case 2:
                 objectBehaviour.GetComponent<MeshFilter>().mesh = objectBehaviour.mesh3;
-                return;
+                break;
         }
 
-        Debug.Log("Destroy and add box collider");
-        Destroy(objectBehaviour.transform.GetComponent<BoxCollider>());
         objectBehaviour.transform.gameObject.AddComponent<BoxCollider>();
+        objectBehaviour.transform.gameObject.AddComponent<Rigidbody>();
+        objectBehaviour.transform.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         objectBehaviour.transform.position = new Vector3(0.0f, objectInitialHeight, 0.0f); // TODO: finish positioning...
+        objectBehaviour.RemoveHoles();
+        objectBehaviour.SpawnHoles();
 
-        gameState = GameState.moveScrewdriverDown;
+        gameState = GameState.moveObjectDown;
     }
 
     void UpdateEndScreen()
