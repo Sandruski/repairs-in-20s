@@ -10,17 +10,23 @@ public class UIManager : MonoBehaviour
     public Text text;
 
     public DollyMovement dolly;
+    public Text Points;
+
+    public PlayerController playerController;
 
     void Update()
     {
        // text.gameObject.SetActive(false);
         text.text = Mathf.CeilToInt(objectController.GameplayTimer).ToString();
+        Points.text = playerController.score.ToString();
     }
 
     public void Play()
     {
         menu.SetActive(false);
         text.gameObject.SetActive(true);
+
+        EnableScore();
 
         dolly.OutofTV();
     }
@@ -43,5 +49,15 @@ public class UIManager : MonoBehaviour
     public void OnClickMainMenuButton()
     {
         SceneManager.LoadScene("SampleScene", LoadSceneMode.Single);
+    }
+
+    public void DisableScore()
+    {
+        Points.gameObject.SetActive(false);
+    }
+
+    public void EnableScore()
+    {
+        Points.gameObject.SetActive(true);
     }
 }
