@@ -661,6 +661,8 @@ MonoBehaviour:
   objectBehaviour: {fileID: 1883344715420561918}
   inputManager: {fileID: 151487967}
   gameController: {fileID: 151487971}
+  audioSrc: {fileID: 7484195880272517299}
+  readySfx: {fileID: 8300000, guid: 508ab8a1c82597847bf1b11be3998707, type: 3}
   B_Ready_1: {fileID: 975154319}
   B_Ready_2: {fileID: 558088832}
   sparks: {fileID: 4847148720858677230, guid: e92384874c5b07443a0cae508ddaae4a, type: 3}

@@ -20,6 +20,9 @@ public class PlayerController : MonoBehaviour
     public InputManager inputManager;
     public GameController gameController;
 
+    public AudioSource audioSrc;
+    public AudioClip readySfx;
+
     public GameObject B_Ready_1;
     public GameObject B_Ready_2;
 
@@ -74,6 +77,8 @@ void Update()
                 {
                     objectReady = !objectReady;
                     B_Ready_1.active = !B_Ready_1.active;
+                    audioSrc.clip = readySfx;
+                    audioSrc.Play();
                 }
             }
 
@@ -87,6 +92,8 @@ void Update()
                 {
                     screwdriverReady = !screwdriverReady;
                     B_Ready_2.active = !B_Ready_2.active;
+                    audioSrc.clip = readySfx;
+                    audioSrc.Play();
                 }
             }
 
