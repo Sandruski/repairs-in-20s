@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
         B_Ready_1.active = B_Ready_2.active = false;
     }
 
-void Update()
+    void Update()
     {
         if (gameController.gameState != GameController.GameState.play)
         {
@@ -106,7 +106,7 @@ void Update()
                 RaycastHit raycastHit;
                 if (Physics.Raycast(
                     screwdriverController.redScrewdriver.transform.position,
-                    Vector3.left, 
+                    Vector3.left,
                     out raycastHit,
                     Mathf.Infinity))
                 {

@@ -49,7 +49,11 @@ public class ScrewdriverController : MonoBehaviour
     }
     void Update()
     {
-        if (gameController.gameState != GameController.GameState.play && !playerController.Animate)
+        if (playerController.Animate)
+        {
+            return;
+        }
+        if (gameController.gameState != GameController.GameState.play)
         {
             return;
         }
