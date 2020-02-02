@@ -36,6 +36,8 @@ public class GameController : MonoBehaviour
     public uint objectsRepaired;
     public float spinTime = 1.0f;
     public bool startSpinning = false;
+
+    public AudioClip SFXGround;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -187,6 +189,7 @@ public class GameController : MonoBehaviour
         if (objectBehaviour.TouchGround)
         {
             gameState = GameState.moveScrewdriverDown;
+            audioSrc.PlayOneShot(SFXGround);
         }
     }
 
