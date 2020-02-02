@@ -8,7 +8,9 @@ A game made for the Global Game Jam 2020 following the theme 'repair'.
 
 ## About the game
 
-Multiplayer cooperative game about repairing as many screens as possible in 20 seconds. How to play instructions are inside the game.
+Multiplayer cooperative game about repairing as many screens as possible in 20 seconds. How to play instructions are inside the game. 
+
+[Video](https://www.youtube.com/watch?v=SlcaZCp7WaI)
 
 ## Installation instructions
 
