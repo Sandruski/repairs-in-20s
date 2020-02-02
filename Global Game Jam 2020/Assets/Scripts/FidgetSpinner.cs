@@ -2,12 +2,15 @@
 
 public class FidgetSpinner : MonoBehaviour
 {
-    public float RotationForce = 45.0f;
+    public float RotationForce = 65.0f;
 
-    public bool Rotate = false;
+    private bool spin = false;
+    public GameController gameController;
     void Update()
     {
-        if (Rotate)
+        spin = gameController.startSpinning;
+
+        if (spin)
         {
             Quaternion quaternion = Quaternion.AngleAxis(RotationForce * Time.deltaTime, Vector3.forward);
             transform.rotation = quaternion * transform.rotation;

@@ -29,12 +29,15 @@ public class GameController : MonoBehaviour
 
     [HideInInspector]
     public uint objectsRepaired;
+    public float spinTime = 1.0f;
+    public bool startSpinning = false;
     #endregion
 
     #region PRIVATE_VARIABLES
     //private bool objectReady;
     //private bool screwdriverReady;
     private bool firstGame;
+    private float spinTimer = 0.0f;
     #endregion
 
     Transform guide1;
@@ -75,6 +78,17 @@ public class GameController : MonoBehaviour
             case GameState.endscreen:
                 UpdateEndScreen();
                 break;
+        }
+
+        if (startSpinning)
+        {
+            spinTimer += Time.deltaTime;
+
+            if (spinTimer >= spinTime)
+            {
+                startSpinning = false;
+                spinTimer = 0.0f;
+            }
         }
     }
 
@@ -171,7 +185,7 @@ public class GameController : MonoBehaviour
             {
                 interpolate = false;
                 objectController.GetComponent<Rigidbody>().isKinematic = false;
-                gameState = GameState.moveObjectSide;
+                gameState = GameState.moveObjectSide;     
             }
             else
             {
@@ -200,6 +214,8 @@ public class GameController : MonoBehaviour
     void MoveObjectSide()
     {      
         objectController.GetComponent<Rigidbody>().AddForce(Vector3.right, ForceMode.Impulse);
+        //startSpinning = true;
+        //gameState = GameState.prepareNextObject;
     }
 
     void PrepareNextObject()

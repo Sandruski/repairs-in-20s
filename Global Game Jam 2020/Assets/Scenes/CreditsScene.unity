@@ -398,7 +398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8, y: -2}
+  m_AnchoredPosition: {x: 8, y: 21}
   m_SizeDelta: {x: 652.4, y: 406.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669858151
@@ -432,8 +432,9 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "the team:\n\nsandra alvarez: programmer\nguillem costa: programmer\noriol
-    de dios: designer, cinemetic assistant & audio\nv\xEDctor mas\xF3: artist"
+  m_Text: "game for the global game jam 2020\n\nthe team:\n\nsandra alvarez: programmer\nguillem
+    costa: programmer\noriol de dios: designer, cinemetic assistant & audio\nv\xEDctor
+    mas\xF3: artist"
 --- !u!222 &669858152
 CanvasRenderer:
   m_ObjectHideFlags: 0
