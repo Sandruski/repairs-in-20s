@@ -21,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public ObjectBehaviour objectBehaviour;
     public InputManager inputManager;
     public GameController gameController;
+    public UIManager uiManager;
 
     public AudioSource audioSrc;
     public AudioClip readySfx;
@@ -64,6 +65,7 @@ public class PlayerController : MonoBehaviour
                     ++gameController.objectsRepaired;
                     gameController.gameState = GameController.GameState.moveScrewdriverUp;
                     objectController.GameplayTimer += 5.0f;
+                    uiManager.SpawnPoints(5, Color.green);
                 }
 
                 B_Ready_2.active = B_Ready_1.active = false;
@@ -153,6 +155,7 @@ public class PlayerController : MonoBehaviour
                 if (none)
                 {
                     objectController.GameplayTimer -= 3.0f;
+                    uiManager.SpawnPoints(-3, Color.red);
                     B_Ready_2.active = B_Ready_1.active = false;
                     audioSrc.clip = wrongSfx;
                     audioSrc.Play();

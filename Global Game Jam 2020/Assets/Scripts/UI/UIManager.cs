@@ -70,13 +70,15 @@ public class UIManager : MonoBehaviour
         if (pointsText.gameObject.activeSelf)
         {
             float lerpTick = lerpCurrentTime / LerpTotalTime;
-            pointsText.gameObject.transform.position = Vector3.Lerp(pointsInitPos, pointsEndPos, lerpTick);
+            pointsText.rectTransform.localPosition = Vector3.Lerp(pointsInitPos, pointsEndPos, lerpTick);
             pointsText.color = new Color(pointsText.color.r, pointsText.color.g, pointsText.color.b, Mathf.Lerp(1.0f, 0.0f, lerpTick));
  
             if (lerpTick >= 1.0)
             {
                 pointsText.gameObject.SetActive(false);
             }
+
+            lerpCurrentTime += Time.deltaTime;
         }
     }
 
@@ -125,7 +127,8 @@ public class UIManager : MonoBehaviour
         if (points > 0)
             pointsText.text = "+" + points.ToString();
         if (points < 0)
-            pointsText.text = "-" + points.ToString();
+            pointsText.text = points.ToString();
+        pointsText.color = color;
         lerpCurrentTime = 0.0f;
         pointsText.gameObject.SetActive(true);
     }
