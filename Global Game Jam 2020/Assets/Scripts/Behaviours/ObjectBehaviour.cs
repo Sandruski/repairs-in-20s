@@ -43,6 +43,7 @@ public class ObjectBehaviour : MonoBehaviour
         holes = new List<GameObject>();
         size = Vector3.Scale(transform.localScale, GetComponent<MeshFilter>().mesh.bounds.size);
         SpawnHoles();
+        AddRigidbodyToHoles();
     }
 
     public void SpawnHoles()
@@ -112,7 +113,7 @@ public class ObjectBehaviour : MonoBehaviour
                     {
                         hole = Instantiate(Resources.Load("BlueHole") as GameObject, spawnPosition, spawnRotation, transform);
                     }
-                    hole.GetComponent<Rigidbody>().isKinematic = true;
+
                     holes.Add(hole);
                 }
             }
@@ -135,6 +136,18 @@ public class ObjectBehaviour : MonoBehaviour
         holes.Clear();
     }
 
+    void AddRigidbodyToHoles()
+    {
+        foreach (GameObject hole in holes)
+        {
+            if (hole.GetComponent<Rigidbody>() == null)
+            {
+                hole.AddComponent<Rigidbody>();
+            }
+            hole.GetComponent<Rigidbody>().isKinematic = true;
+        }
+    }
+
     public bool AreAllHolesRemoved()
     {
         return holes.Count == 0;
@@ -145,6 +158,7 @@ public class ObjectBehaviour : MonoBehaviour
         if (collision.gameObject.name == "FakeFloor")
         {
             touchGround = true;
+            AddRigidbodyToHoles();
         }
     }
 
