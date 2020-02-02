@@ -24,6 +24,7 @@ public class PlayerController : MonoBehaviour
 
     public AudioSource audioSrc;
     public AudioClip readySfx;
+    public AudioClip wrongSfx;
 
     public GameObject B_Ready_1;
     public GameObject B_Ready_2;
@@ -98,6 +99,7 @@ public class PlayerController : MonoBehaviour
                     B_Ready_2.active = !B_Ready_2.active;
                     audioSrc.clip = readySfx;
                     audioSrc.Play();
+
                 }
             }
 
@@ -152,6 +154,8 @@ public class PlayerController : MonoBehaviour
                 {
                     objectController.GameplayTimer -= 3.0f;
                     B_Ready_2.active = B_Ready_1.active = false;
+                    audioSrc.clip = wrongSfx;
+                    audioSrc.Play();
                 }
 
                 objectReady = screwdriverReady = false;
