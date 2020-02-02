@@ -12,6 +12,8 @@ public class UIManager : MonoBehaviour
     public DollyMovement dolly;
     public Text Points;
 
+    public InputManager input;
+
     public PlayerController playerController;
 
     void Update()
@@ -19,6 +21,26 @@ public class UIManager : MonoBehaviour
        // text.gameObject.SetActive(false);
         text.text = Mathf.CeilToInt(objectController.GameplayTimer).ToString();
         Points.text = playerController.score.ToString();
+
+        if (menu.activeSelf)
+        {
+            if (input.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.A))
+            {
+                Play();
+            }
+            if (input.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.B))
+            {
+                Exit();
+            }
+            if (input.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.X))
+            {
+                Howtoplay();
+            }
+            if (input.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.Y))
+            {
+                OnClickCreditsButton();
+            }
+        }
     }
 
     public void Play()
