@@ -197,7 +197,7 @@ public class GameController : MonoBehaviour
 
     void MoveObjectSide()
     {      
-        objectController.GetComponent<Rigidbody>().AddForce(1.0f, 0.0f, 0.0f, ForceMode.Impulse);
+        objectController.GetComponent<Rigidbody>().AddForce(0.4f, 0.0f, 0.0f, ForceMode.Impulse);
         if (objectBehaviour.Invisible)
         {
             gameState = GameState.prepareNextObject;
@@ -246,18 +246,6 @@ public class GameController : MonoBehaviour
 
         objectBehaviour.transform.gameObject.AddComponent<BoxCollider>();
         objectBehaviour.transform.gameObject.AddComponent<Rigidbody>();
-        switch (objectBehaviour.height)
-        {
-            case 2:
-                objectBehaviour.GetComponent<BoxCollider>().center = new Vector3(objectBehaviour.GetComponent<BoxCollider>().center.x, -0.5f, objectBehaviour.GetComponent<BoxCollider>().center.z);
-                objectBehaviour.GetComponent<BoxCollider>().size = new Vector3(objectBehaviour.GetComponent<BoxCollider>().size.x, -2, objectBehaviour.GetComponent<BoxCollider>().size.z);
-                break;
-            case 3:
-                objectBehaviour.GetComponent<BoxCollider>().center = new Vector3(objectBehaviour.GetComponent<BoxCollider>().center.x, -0.4f, objectBehaviour.GetComponent<BoxCollider>().center.z);
-                objectBehaviour.GetComponent<BoxCollider>().size = new Vector3(objectBehaviour.GetComponent<BoxCollider>().size.x, -3, objectBehaviour.GetComponent<BoxCollider>().size.z);
-                break;
-        }
-
         objectBehaviour.transform.rotation = Quaternion.AngleAxis(180.0f, Vector3.up);
         objectBehaviour.RecalculateSize();
         objectBehaviour.RemoveHoles();

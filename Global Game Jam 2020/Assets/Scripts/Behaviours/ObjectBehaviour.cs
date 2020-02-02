@@ -65,8 +65,19 @@ public class ObjectBehaviour : MonoBehaviour
                 if (Random.value <= spawnProbability
                     || (i == height - 1 && j == 3 && !hasSpawned))
                 {
-                    float halfHeightDistance = screwdriverController.heightDistance / 2.0f;
-                    float y = (i + 1) * halfHeightDistance;
+                    float y = 0.0f;
+                    switch (i)
+                    {
+                        case 0:
+                            y = screwdriverController.heightDistance / 2.0f;
+                            break;
+                        case 1:
+                            y = screwdriverController.heightDistance / 2.0f + screwdriverController.heightDistance;
+                            break;
+                        case 2:
+                            y = screwdriverController.heightDistance / 2.0f + 2.0f * screwdriverController.heightDistance;
+                            break;
+                    }
 
                     float halfWidthDistance = size.x / 2.0f;
                     float x = 0.0f;
