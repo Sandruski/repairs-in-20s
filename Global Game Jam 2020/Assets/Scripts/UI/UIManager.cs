@@ -18,6 +18,17 @@ public class UIManager : MonoBehaviour
 
     public GameObject endScreen;
 
+    public Text pointsText;
+    public Vector3 pointsInitPos;
+    public Vector3 pointsEndPos;
+    public float LerpTotalTime = 1.0f;
+    float lerpCurrentTime;
+
+    private void Start()
+    {
+        pointsText.gameObject.SetActive(false);
+    }
+
     void Update()
     {
         // text.gameObject.SetActive(false);
@@ -53,6 +64,18 @@ public class UIManager : MonoBehaviour
             if (input.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.B))
             {
                 Exit();
+            }
+        }
+
+        if (pointsText.gameObject.activeSelf)
+        {
+            float lerpTick = lerpCurrentTime / LerpTotalTime;
+            pointsText.gameObject.transform.position = Vector3.Lerp(pointsInitPos, pointsEndPos, lerpTick);
+            pointsText.color = new Color(pointsText.color.r, pointsText.color.g, pointsText.color.b, Mathf.Lerp(1.0f, 0.0f, lerpTick));
+ 
+            if (lerpTick >= 1.0)
+            {
+                pointsText.gameObject.SetActive(false);
             }
         }
     }
@@ -95,5 +118,12 @@ public class UIManager : MonoBehaviour
     public void EnableScore()
     {
         Points.gameObject.SetActive(true);
+    }
+
+    public void SpawnPoints(int points, Color color)
+    {
+        pointsText.text = points.ToString();
+        lerpCurrentTime = 0.0f;
+        pointsText.gameObject.SetActive(true);
     }
 }
