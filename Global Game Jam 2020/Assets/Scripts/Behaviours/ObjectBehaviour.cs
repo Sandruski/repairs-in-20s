@@ -22,6 +22,9 @@ public class ObjectBehaviour : MonoBehaviour
     public Mesh mesh1;
     public Mesh mesh2;
     public Mesh mesh3;
+    public Material material1;
+    public Material material2;
+    public Material material3;
 
     public ScrewdriverController screwdriverController;
 
@@ -109,6 +112,7 @@ public class ObjectBehaviour : MonoBehaviour
                     {
                         hole = Instantiate(Resources.Load("BlueHole") as GameObject, spawnPosition, spawnRotation, transform);
                     }
+                    hole.GetComponent<Rigidbody>().isKinematic = true;
                     holes.Add(hole);
                 }
             }

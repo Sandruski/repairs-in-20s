@@ -5207,6 +5207,9 @@ MonoBehaviour:
   mesh1: {fileID: 5582658842733132069, guid: d77d6b6b4c9fb63479f7127ad05de6a3, type: 3}
   mesh2: {fileID: -2971176557499988169, guid: 6ccc02d26e3eca642ac0767ee40bfce7, type: 3}
   mesh3: {fileID: 8309474951070910916, guid: 6c49aefb381087d439a1a1b32587e874, type: 3}
+  material1: {fileID: 2100000, guid: a3c5ea23c71689a43b71eb8bbcc25f8b, type: 2}
+  material2: {fileID: 2100000, guid: 61bacdf59c0035049b4ef7dcb839f610, type: 2}
+  material3: {fileID: 2100000, guid: 3627e69a461dd8a43a11249a840076d4, type: 2}
   screwdriverController: {fileID: 1171637989}
   size: {x: 0, y: 0, z: 0}
   holes: []

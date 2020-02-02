@@ -183,6 +183,7 @@ public class GameController : MonoBehaviour
                 interpolate = false;
                 timer = 0.0f;
                 objectController.GetComponent<Rigidbody>().isKinematic = false;
+                objectBehaviour.transform.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
                 gameState = GameState.moveObjectSide;
                 audioSrc.clip = audioClip;
                 audioSrc.Play();
@@ -246,23 +247,26 @@ public class GameController : MonoBehaviour
         Debug.Log("Next object height: " + nextObjectHeight);
         switch (objectBehaviour.height)
         {
-            case 0:
-                objectBehaviour.GetComponent<MeshFilter>().mesh = objectBehaviour.mesh1;
-                break;
             case 1:
-                objectBehaviour.GetComponent<MeshFilter>().mesh = objectBehaviour.mesh2;
+                objectBehaviour.GetComponent<MeshFilter>().mesh = objectBehaviour.mesh1;
+                objectBehaviour.GetComponent<MeshRenderer>().material = objectBehaviour.material1;
                 break;
             case 2:
+                objectBehaviour.GetComponent<MeshFilter>().mesh = objectBehaviour.mesh2;
+                objectBehaviour.GetComponent<MeshRenderer>().material = objectBehaviour.material2;
+                break;
+            case 3:
                 objectBehaviour.GetComponent<MeshFilter>().mesh = objectBehaviour.mesh3;
+                objectBehaviour.GetComponent<MeshRenderer>().material = objectBehaviour.material3;
                 break;
         }
 
         objectBehaviour.transform.gameObject.AddComponent<BoxCollider>();
         objectBehaviour.transform.gameObject.AddComponent<Rigidbody>();
-        objectBehaviour.transform.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
-        objectBehaviour.transform.position = new Vector3(0.0f, objectInitialHeight, 0.0f); // TODO: finish positioning...
         objectBehaviour.RemoveHoles();
-        objectBehaviour.SpawnHoles();
+        //objectBehaviour.SpawnHoles();
+        objectBehaviour.transform.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
+        objectBehaviour.transform.position = new Vector3(0.0f, objectInitialHeight, 0.0f); // TODO: finish positioning...
 
         gameState = GameState.moveObjectDown;
     }
