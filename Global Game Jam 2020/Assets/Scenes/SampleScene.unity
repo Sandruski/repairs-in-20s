@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657844, g: 0.49641222, b: 0.57481694, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -689,6 +689,7 @@ MonoBehaviour:
   audioClip: {fileID: 8300000, guid: e21f9507bfe722849ad9754d107f7c34, type: 3}
   objectInitialHeight: 6
   endScreenObj: {fileID: 620129129}
+  uimanager: {fileID: 171045646}
   objectsRepaired: 0
   spinTime: 1
   startSpinning: 0
@@ -2107,6 +2108,16 @@ PrefabInstance:
       propertyPath: endScreen
       value: 
       objectReference: {fileID: 620129129}
+    - target: {fileID: 7595012712230580773, guid: 91a8d4ab0d108a94588c7ca46b9f7fb2,
+        type: 3}
+      propertyPath: Points
+      value: 
+      objectReference: {fileID: 1465845985}
+    - target: {fileID: 7595012712230580773, guid: 91a8d4ab0d108a94588c7ca46b9f7fb2,
+        type: 3}
+      propertyPath: playerController
+      value: 
+      objectReference: {fileID: 151487970}
     - target: {fileID: 7595012712230580793, guid: 91a8d4ab0d108a94588c7ca46b9f7fb2,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3884,6 +3895,83 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RotationForce: 45
   gameController: {fileID: 151487971}
+--- !u!1 &1465845984
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1465845987}
+  - component: {fileID: 1465845986}
+  - component: {fileID: 1465845985}
+  m_Layer: 5
+  m_Name: Score
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1465845985
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465845984}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 12800000, guid: 7e3f3b16aca4aa044be8a6615886f2b0, type: 3}
+    m_FontSize: 60
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 4
+    m_MaxSize: 60
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &1465845986
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465845984}
+  m_CullTransparentMesh: 0
+--- !u!224 &1465845987
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1465845984}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 171045650}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: -132}
+  m_SizeDelta: {x: 200.75, y: 97.6}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &1513590366
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5235,6 +5323,7 @@ MonoBehaviour:
   GameplayTimer: 20
   endScreenObj: {fileID: 620129129}
   scoreText: {fileID: 675516824}
+  uimanager: {fileID: 171045646}
 --- !u!65 &1883344715420561920
 BoxCollider:
   m_ObjectHideFlags: 0
