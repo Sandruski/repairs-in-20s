@@ -140,7 +140,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &15582936 stripped
 GameObject:
@@ -161,7 +160,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1001 &17480287
 PrefabInstance:
@@ -426,7 +424,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &24332495 stripped
 GameObject:
@@ -447,7 +444,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &48796189 stripped
 GameObject:
@@ -468,7 +464,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &54461731 stripped
 GameObject:
@@ -489,7 +484,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &107600887 stripped
 GameObject:
@@ -510,7 +504,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &114757138 stripped
 GameObject:
@@ -531,7 +524,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &122448561 stripped
 GameObject:
@@ -552,7 +544,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &124966481 stripped
 GameObject:
@@ -573,7 +564,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &131378908 stripped
 GameObject:
@@ -594,7 +584,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &151487966
 GameObject:
@@ -694,6 +683,8 @@ MonoBehaviour:
   objectController: {fileID: 1883344715420561919}
   objectBehaviour: {fileID: 1883344715420561918}
   dollyMovement: {fileID: 848979513}
+  audioSrc: {fileID: 7484195880272517299}
+  audioClip: {fileID: 8300000, guid: e21f9507bfe722849ad9754d107f7c34, type: 3}
   objectInitialHeight: 6
   endScreenObj: {fileID: 620129129}
   objectsRepaired: 0
@@ -720,7 +711,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!114 &171045646 stripped
 MonoBehaviour:
@@ -759,7 +749,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &236997284 stripped
 GameObject:
@@ -780,7 +769,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &250429690 stripped
 GameObject:
@@ -835,7 +823,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &266330919 stripped
 GameObject:
@@ -856,7 +843,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &287226882 stripped
 GameObject:
@@ -877,7 +863,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &303787962 stripped
 GameObject:
@@ -898,7 +883,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &339326533 stripped
 GameObject:
@@ -919,7 +903,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &342838887
 GameObject:
@@ -1069,7 +1052,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &346401579 stripped
 GameObject:
@@ -1090,7 +1072,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &356325051
 GameObject:
@@ -1238,7 +1219,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &421708521
 GameObject:
@@ -1344,7 +1324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &550011623 stripped
 GameObject:
@@ -1365,7 +1344,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &558088832 stripped
 GameObject:
@@ -1392,7 +1370,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &581534658
 GameObject:
@@ -1490,7 +1467,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &604308761 stripped
 GameObject:
@@ -1530,7 +1506,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &620129129
 GameObject:
@@ -1667,7 +1642,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &705507993
 GameObject:
@@ -1780,7 +1754,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &781642701 stripped
 GameObject:
@@ -1801,7 +1774,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1001 &783127197
 PrefabInstance:
@@ -2294,7 +2266,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &799908630 stripped
 GameObject:
@@ -2315,7 +2286,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &820157462 stripped
 GameObject:
@@ -2336,7 +2306,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &847180010 stripped
 GameObject:
@@ -2357,7 +2326,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1001 &848979504
 PrefabInstance:
@@ -2692,7 +2660,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &861636316 stripped
 GameObject:
@@ -2713,7 +2680,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &876123528 stripped
 GameObject:
@@ -2734,7 +2700,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &954876253 stripped
 GameObject:
@@ -2755,7 +2720,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &965829974 stripped
 GameObject:
@@ -2776,7 +2740,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &975154319 stripped
 GameObject:
@@ -2803,7 +2766,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &993368847 stripped
 GameObject:
@@ -2824,7 +2786,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &996357996 stripped
 GameObject:
@@ -2845,7 +2806,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1007672960
 GameObject:
@@ -2995,7 +2955,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1031938728 stripped
 GameObject:
@@ -3016,7 +2975,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1056933905 stripped
 GameObject:
@@ -3037,7 +2995,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1090492064 stripped
 GameObject:
@@ -3058,7 +3015,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1098524567 stripped
 GameObject:
@@ -3079,7 +3035,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1127385185
 GameObject:
@@ -3194,7 +3149,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1150119467 stripped
 GameObject:
@@ -3215,7 +3169,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1156273821 stripped
 GameObject:
@@ -3236,7 +3189,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1158397843 stripped
 GameObject:
@@ -3257,7 +3209,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1171637988
 GameObject:
@@ -3342,7 +3293,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1197477077 stripped
 GameObject:
@@ -3363,7 +3313,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1201712857
 GameObject:
@@ -3508,7 +3457,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1258581787 stripped
 GameObject:
@@ -3529,7 +3477,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1260720765 stripped
 GameObject:
@@ -3550,7 +3497,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1271053125 stripped
 GameObject:
@@ -3571,7 +3517,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1001 &1296199506
 PrefabInstance:
@@ -3836,7 +3781,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1315189417 stripped
 GameObject:
@@ -3857,7 +3801,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1328321634 stripped
 GameObject:
@@ -3878,7 +3821,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1418349285 stripped
 GameObject:
@@ -3899,7 +3841,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1433988487 stripped
 GameObject:
@@ -3920,7 +3861,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1456201634 stripped
 GameObject:
@@ -3941,7 +3881,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1001 &1513590366
 PrefabInstance:
@@ -4206,7 +4145,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1571664488 stripped
 GameObject:
@@ -4227,7 +4165,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1574699271 stripped
 GameObject:
@@ -4267,7 +4204,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1610447284 stripped
 GameObject:
@@ -4288,7 +4224,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1643680008 stripped
 GameObject:
@@ -4309,7 +4244,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1665762395 stripped
 GameObject:
@@ -4330,7 +4264,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1741402643 stripped
 GameObject:
@@ -4351,7 +4284,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1745808068 stripped
 GameObject:
@@ -4372,7 +4304,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1748187470 stripped
 GameObject:
@@ -4393,7 +4324,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1752561579 stripped
 GameObject:
@@ -4414,7 +4344,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1761958234 stripped
 GameObject:
@@ -4435,7 +4364,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1802599492 stripped
 GameObject:
@@ -4456,7 +4384,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1824374961 stripped
 GameObject:
@@ -4477,7 +4404,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1825014334 stripped
 GameObject:
@@ -4498,7 +4424,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1828947045 stripped
 GameObject:
@@ -4519,7 +4444,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1876639292 stripped
 GameObject:
@@ -4540,7 +4464,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1880226265 stripped
 GameObject:
@@ -4561,7 +4484,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!82 &1882435696
 AudioSource:
@@ -4678,7 +4600,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1926549327
 GameObject:
@@ -4776,7 +4697,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1953598041 stripped
 GameObject:
@@ -4797,7 +4717,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1959195252 stripped
 GameObject:
@@ -4818,7 +4737,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &1989310351 stripped
 GameObject:
@@ -4839,7 +4757,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &2001744783 stripped
 GameObject:
@@ -4860,7 +4777,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &2009305300 stripped
 GameObject:
@@ -4881,7 +4797,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &2044864383 stripped
 GameObject:
@@ -4902,7 +4817,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &2077922573 stripped
 GameObject:
@@ -4923,7 +4837,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &2078999315 stripped
 GameObject:
@@ -4944,7 +4857,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &2095190057 stripped
 GameObject:
@@ -4965,7 +4877,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &2105055772
 GameObject:
@@ -5059,7 +4970,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!1 &2141788931 stripped
 GameObject:
@@ -5080,7 +4990,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   RotationForce: 45
-  spin: 0
   gameController: {fileID: 151487971}
 --- !u!23 &1883344715420561905
 MeshRenderer:

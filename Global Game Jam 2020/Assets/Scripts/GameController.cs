@@ -22,6 +22,8 @@ public class GameController : MonoBehaviour
     public ObjectController objectController;
     public ObjectBehaviour objectBehaviour;
     public DollyMovement dollyMovement;
+    public AudioSource audioSrc;
+    public AudioClip audioClip;
 
     public float objectInitialHeight;
 
@@ -185,7 +187,9 @@ public class GameController : MonoBehaviour
             {
                 interpolate = false;
                 objectController.GetComponent<Rigidbody>().isKinematic = false;
-                gameState = GameState.moveObjectSide;     
+                gameState = GameState.moveObjectSide;
+                audioSrc.clip = audioClip;
+                audioSrc.Play();
             }
             else
             {
