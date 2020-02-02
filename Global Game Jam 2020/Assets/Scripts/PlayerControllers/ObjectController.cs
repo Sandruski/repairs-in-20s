@@ -44,7 +44,7 @@ public class ObjectController : MonoBehaviour
 
     void Update()
     {
-        if (gameController.gameState != GameController.GameState.play)
+        if (gameController.gameState != GameController.GameState.play && !playerController.Animate)
         {
             return;
         }

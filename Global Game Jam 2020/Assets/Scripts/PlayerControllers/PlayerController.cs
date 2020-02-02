@@ -11,6 +11,10 @@ public class PlayerController : MonoBehaviour
     {
         get { return screwdriverReady; }
     }
+    public bool Animate
+    {
+        get { return animate; }
+    }
 
     public ScrewdriverController screwdriverController;
     public ObjectController objectController;

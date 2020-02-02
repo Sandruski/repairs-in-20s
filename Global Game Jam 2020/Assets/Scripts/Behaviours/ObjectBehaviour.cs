@@ -41,9 +41,14 @@ public class ObjectBehaviour : MonoBehaviour
     void Start()
     {
         holes = new List<GameObject>();
-        size = Vector3.Scale(transform.localScale, GetComponent<MeshFilter>().mesh.bounds.size);
+        RecalculateSize();
         SpawnHoles();
         AddRigidbodyToHoles();
+    }
+
+    public void RecalculateSize()
+    {
+        size = Vector3.Scale(transform.localScale, GetComponent<MeshFilter>().mesh.bounds.size);
     }
 
     public void SpawnHoles()

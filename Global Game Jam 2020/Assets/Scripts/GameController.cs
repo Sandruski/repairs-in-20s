@@ -177,9 +177,9 @@ public class GameController : MonoBehaviour
         else
         {
             fromPosition1 = guide1.transform.localPosition;
-            toPosition1 = new Vector3(guide1.transform.localPosition.x, 1.0f, guide1.transform.localPosition.z);
+            toPosition1 = new Vector3(guide1.transform.localPosition.x, 2.3f, guide1.transform.localPosition.z);
             fromPosition2 = guide2.transform.localPosition;
-            toPosition2 = new Vector3(guide2.transform.localPosition.x, 1.0f, guide2.transform.localPosition.z);
+            toPosition2 = new Vector3(guide2.transform.localPosition.x, 2.3f, guide2.transform.localPosition.z);
             timer = 0.0f;
             interpolate = true;
         }
@@ -246,7 +246,20 @@ public class GameController : MonoBehaviour
 
         objectBehaviour.transform.gameObject.AddComponent<BoxCollider>();
         objectBehaviour.transform.gameObject.AddComponent<Rigidbody>();
+        switch (objectBehaviour.height)
+        {
+            case 2:
+                objectBehaviour.GetComponent<BoxCollider>().center = new Vector3(objectBehaviour.GetComponent<BoxCollider>().center.x, -0.5f, objectBehaviour.GetComponent<BoxCollider>().center.z);
+                objectBehaviour.GetComponent<BoxCollider>().size = new Vector3(objectBehaviour.GetComponent<BoxCollider>().size.x, -2, objectBehaviour.GetComponent<BoxCollider>().size.z);
+                break;
+            case 3:
+                objectBehaviour.GetComponent<BoxCollider>().center = new Vector3(objectBehaviour.GetComponent<BoxCollider>().center.x, -0.4f, objectBehaviour.GetComponent<BoxCollider>().center.z);
+                objectBehaviour.GetComponent<BoxCollider>().size = new Vector3(objectBehaviour.GetComponent<BoxCollider>().size.x, -3, objectBehaviour.GetComponent<BoxCollider>().size.z);
+                break;
+        }
+
         objectBehaviour.transform.rotation = Quaternion.AngleAxis(180.0f, Vector3.up);
+        objectBehaviour.RecalculateSize();
         objectBehaviour.RemoveHoles();
         objectBehaviour.SpawnHoles();
         objectBehaviour.transform.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
