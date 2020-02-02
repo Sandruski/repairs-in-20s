@@ -9,6 +9,10 @@ public class ObjectBehaviour : MonoBehaviour
     {
         get { return touchGround; }
     }
+    public bool Invisible
+    {
+        get { return invisible; }
+    }
 
     public uint height;
 
@@ -27,6 +31,7 @@ public class ObjectBehaviour : MonoBehaviour
 
     #region PRIVATE_VARIABLES
     private bool touchGround = false;
+    private bool invisible = false;
     public List<GameObject> holes;
     #endregion
 
@@ -40,6 +45,7 @@ public class ObjectBehaviour : MonoBehaviour
     public void SpawnHoles()
     {
         touchGround = false;
+        invisible = false;
 
         bool hasSpawned = false;
 
@@ -132,9 +138,14 @@ public class ObjectBehaviour : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
-        if (collision.gameObject.name == "Floor")
+        if (collision.gameObject.name == "FakeFloor")
         {
             touchGround = true;
         }
+    }
+
+    void OnBecameInvisible()
+    {
+        invisible = true;   
     }
 }
