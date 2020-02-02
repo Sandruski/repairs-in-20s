@@ -102,30 +102,6 @@ public class GameController : MonoBehaviour
 
     void UpdateStartScreen()
     {
-        /*
-        if (Input.GetKeyDown(KeyCode.Return)
-            || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.A)
-            || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.B)
-            || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.Y)
-            || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.X))
-        {
-            objectReady = true;
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space)
-            || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.A)
-            || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.B)
-            || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.Y)
-            || inputManager.GetButtonDown(InputManager.Gamepads.Gamepad_2, InputManager.Buttons.X))
-        {
-            screwdriverReady = true;
-        }
-
-        if (objectReady && screwdriverReady)
-        {
-            gameState = GameState.play;
-        }*/
-
         if (dollyMovement.isAtEnd)
         {
             gameState = GameState.moveScrewdriverDown;
@@ -266,7 +242,7 @@ public class GameController : MonoBehaviour
         objectBehaviour.transform.gameObject.AddComponent<BoxCollider>();
         objectBehaviour.transform.gameObject.AddComponent<Rigidbody>();
         objectBehaviour.RemoveHoles();
-        //objectBehaviour.SpawnHoles();
+        objectBehaviour.SpawnHoles();
         objectBehaviour.transform.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
         objectBehaviour.transform.position = new Vector3(0.0f, objectInitialHeight, 0.0f); // TODO: finish positioning...
 
