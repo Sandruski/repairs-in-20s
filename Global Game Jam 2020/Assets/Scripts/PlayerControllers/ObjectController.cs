@@ -59,7 +59,7 @@ public class ObjectController : MonoBehaviour
                 gameController.gameState = GameController.GameState.endscreen;
                 // TODO: AQUI ANEM AL ESTAT DE ACABAR EL JOC. passa 1 cop nomes per aqui
                 endScreenObj.SetActive(true);
-                scoreText.text = "you have repaired " + playerController.score + " screens in 20s!"; 
+                scoreText.text = "you have repaired " + playerController.score + " screen(s) in 20s!"; 
 
             }
         }
