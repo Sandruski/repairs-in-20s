@@ -246,6 +246,7 @@ public class GameController : MonoBehaviour
 
         objectBehaviour.transform.gameObject.AddComponent<BoxCollider>();
         objectBehaviour.transform.gameObject.AddComponent<Rigidbody>();
+        objectBehaviour.transform.rotation = Quaternion.AngleAxis(180.0f, Vector3.up);
         objectBehaviour.RemoveHoles();
         objectBehaviour.SpawnHoles();
         objectBehaviour.transform.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.FreezePositionX | RigidbodyConstraints.FreezePositionZ | RigidbodyConstraints.FreezeRotationX | RigidbodyConstraints.FreezeRotationY | RigidbodyConstraints.FreezeRotationZ;
