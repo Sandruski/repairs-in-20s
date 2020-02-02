@@ -693,6 +693,7 @@ MonoBehaviour:
   objectsRepaired: 0
   spinTime: 1
   startSpinning: 0
+  SFXGround: {fileID: 8300000, guid: fc5df9599b84b2547a9c6c6ec4723886, type: 3}
   screwdriverDownInterpolateSeconds: 0.8
   screwdriverUpInterpolateSeconds: 0.5
 --- !u!1 &170820966 stripped
