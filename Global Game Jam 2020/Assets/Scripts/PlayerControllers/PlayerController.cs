@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
@@ -56,6 +54,7 @@ void Update()
             {
                 if (objectBehaviour.AreAllHolesRemoved())
                 {
+                    score++;
                     Debug.Log("All holes have been removed!");
                     ++gameController.objectsRepaired;
                     gameController.gameState = GameController.GameState.moveScrewdriverUp;
@@ -109,7 +108,6 @@ void Update()
                     if (raycastHit.transform.gameObject.name == "RedHole(Clone)")
                     {
                         // TODO: el gameobject es el tornillo red. CHISPAS
-                        score++;
                         currentRedSparks = Instantiate(sparks, raycastHit.transform.transform.position, Quaternion.identity);
                         currentRedSparks.Play();
 
@@ -130,7 +128,6 @@ void Update()
                     if (raycastHit.transform.gameObject.name == "BlueHole(Clone)")
                     {
                         // TODO: tornillo blue quan es fica. CHISPAS
-                        score++;
                         currentBlueSparks = Instantiate(sparks, raycastHit.transform.position, Quaternion.identity);
                         currentBlueSparks.Play();
 

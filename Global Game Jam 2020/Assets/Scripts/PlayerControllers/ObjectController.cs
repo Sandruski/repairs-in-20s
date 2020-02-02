@@ -25,6 +25,7 @@ public class ObjectController : MonoBehaviour
 
     public GameObject endScreenObj;
     public Text scoreText;
+    public UIManager uimanager;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -53,6 +54,7 @@ public class ObjectController : MonoBehaviour
             GameplayTimer -= Time.deltaTime;
             if (GameplayTimer <= 0.0f)
             {
+                uimanager.DisableScore();
                 GameplayTimer = 0.0f;
                 gameController.gameState = GameController.GameState.endscreen;
                 // TODO: AQUI ANEM AL ESTAT DE ACABAR EL JOC. passa 1 cop nomes per aqui

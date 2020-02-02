@@ -29,6 +29,8 @@ public class GameController : MonoBehaviour
 
     public GameObject endScreenObj;
 
+    public UIManager uimanager;
+
     [HideInInspector]
     public uint objectsRepaired;
     public float spinTime = 1.0f;
