@@ -16,9 +16,11 @@ public class UIManager : MonoBehaviour
 
     public PlayerController playerController;
 
+    public GameObject endScreen;
+
     void Update()
     {
-       // text.gameObject.SetActive(false);
+        // text.gameObject.SetActive(false);
         text.text = Mathf.CeilToInt(objectController.GameplayTimer).ToString();
         Points.text = playerController.score.ToString();
 
@@ -39,6 +41,18 @@ public class UIManager : MonoBehaviour
             if (input.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.Y))
             {
                 OnClickCreditsButton();
+            }
+        }
+
+        if (endScreen.activeSelf)
+        {
+            if (input.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.A))
+            {
+                OnClickMainMenuButton();
+            }
+            if (input.GetButtonDown(InputManager.Gamepads.Gamepad_1, InputManager.Buttons.B))
+            {
+                Exit();
             }
         }
     }
