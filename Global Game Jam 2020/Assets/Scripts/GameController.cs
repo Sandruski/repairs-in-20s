@@ -38,6 +38,7 @@ public class GameController : MonoBehaviour
     public bool startSpinning = false;
 
     public AudioClip SFXGround;
+    public ParticleSystem smoke;
     #endregion
 
     #region PRIVATE_VARIABLES
@@ -190,6 +191,7 @@ public class GameController : MonoBehaviour
         {
             gameState = GameState.moveScrewdriverDown;
             audioSrc.PlayOneShot(SFXGround);
+            smoke.Play();
         }
     }
 
