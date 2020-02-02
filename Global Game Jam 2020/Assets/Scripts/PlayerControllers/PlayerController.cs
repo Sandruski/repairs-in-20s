@@ -64,8 +64,8 @@ public class PlayerController : MonoBehaviour
                     Debug.Log("All holes have been removed!");
                     ++gameController.objectsRepaired;
                     gameController.gameState = GameController.GameState.moveScrewdriverUp;
-                    objectController.GameplayTimer += 5.0f;
-                    uiManager.SpawnPoints(5, Color.green);
+                    objectController.GameplayTimer += 3.0f;
+                    uiManager.SpawnPoints(3, Color.green);
                 }
 
                 B_Ready_2.active = B_Ready_1.active = false;
@@ -154,8 +154,8 @@ public class PlayerController : MonoBehaviour
 
                 if (none)
                 {
-                    objectController.GameplayTimer -= 3.0f;
-                    uiManager.SpawnPoints(-3, Color.red);
+                    objectController.GameplayTimer -= 5.0f;
+                    uiManager.SpawnPoints(-5, Color.red);
                     B_Ready_2.active = B_Ready_1.active = false;
                     audioSrc.clip = wrongSfx;
                     audioSrc.Play();

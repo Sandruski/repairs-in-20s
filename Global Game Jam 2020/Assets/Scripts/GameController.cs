@@ -194,13 +194,15 @@ public class GameController : MonoBehaviour
             smoke.Play();
         }
     }
-
+   
     void MoveObjectSide()
     {      
         objectController.GetComponent<Rigidbody>().AddForce(0.4f, 0.0f, 0.0f, ForceMode.Impulse);
-        if (objectBehaviour.Invisible)
+        timer += Time.deltaTime;
+        if (objectBehaviour.Invisible || timer >= 5.0f)
         {
             gameState = GameState.prepareNextObject;
+            timer = 0.0f;
         }
     }
 
