@@ -398,7 +398,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4, y: 15}
+  m_AnchoredPosition: {x: 0, y: 15}
   m_SizeDelta: {x: 652.4, y: 406.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &669858151
@@ -433,14 +433,14 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "objective:\n\tmatch every drill with the correct arm \n\tand repair as
-    many screens as you can\n\nkeyboard:\n\tplayer 1: 'w' moves the arms up\n\t\t\t 
-    's' moves the arms down\n\t\t \t   'space' to confirm that position\n\n\tplayer
-    2: 'left arrow' rotates the tv to the left\n\t\t\t\t'right arrow' rotates the
-    screen to the right\n\t\t \t    'enter' to confirm that rotation\n\ngamepad:\n\tplayer
-    1: 'up' moves the arms up\n\t\t\t   'down' moves the arms down\n\t\t \t   'a'
-    to confirm that position\n\n\tplayer 2: 'left arrow' rotates the screen to the
-    left\n\t\t\t\t'right arrow' rotates the screen to the right\n\t\t \t    'a' to
-    confirm that rotation"
+    many screens as you can\n\nkeyboard:\n\tplayer 1: 'w' moves the arms up\n\t\t\t       
+    's' moves the arms down\n\t\t \t                     'space' to confirm that
+    position\n\n\tplayer 2: 'left arrow' rotates the tv to the left\n\t\t\t\t         
+    'right arrow' rotates the screen to the right\n\t    'enter' to confirm that
+    rotation\n\ngamepad:\n\tplayer 1: 'up' moves the arms up\n\t\t\t            'down'
+    moves the arms down\n\t\t \t\t\t     'a' to confirm that position\n\n\tplayer
+    2: 'left arrow' rotates the screen to the left\n\t\t\t\t'right arrow' rotates
+    the screen to the right\n\t\t \t    'a' to confirm that rotation"
 --- !u!222 &669858152
 CanvasRenderer:
   m_ObjectHideFlags: 0
