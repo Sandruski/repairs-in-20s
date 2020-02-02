@@ -103,6 +103,8 @@ public class PlayerController : MonoBehaviour
 
             if (objectReady && screwdriverReady)
             {
+                bool none = true;
+
                 RaycastHit raycastHit;
                 if (Physics.Raycast(
                     screwdriverController.redScrewdriver.transform.position,
@@ -121,6 +123,7 @@ public class PlayerController : MonoBehaviour
                         Debug.Log("Red hole hit");
                         objectBehaviour.RemoveHole(raycastHit.transform.gameObject);
                         animate = true;
+                        none = false;
                     }
                 }
 
@@ -141,7 +144,14 @@ public class PlayerController : MonoBehaviour
                         Debug.Log("Blue hole hit");
                         objectBehaviour.RemoveHole(raycastHit.transform.gameObject);
                         animate = true;
+                        none = false;
                     }
+                }
+
+                if (none)
+                {
+                    objectController.GameplayTimer -= 3.0f;
+                    B_Ready_2.active = B_Ready_1.active = false;
                 }
 
                 objectReady = screwdriverReady = false;
