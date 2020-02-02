@@ -122,7 +122,10 @@ public class UIManager : MonoBehaviour
 
     public void SpawnPoints(int points, Color color)
     {
-        pointsText.text = points.ToString();
+        if (points > 0)
+            pointsText.text = "+" + points.ToString();
+        if (points < 0)
+            pointsText.text = "-" + points.ToString();
         lerpCurrentTime = 0.0f;
         pointsText.gameObject.SetActive(true);
     }
