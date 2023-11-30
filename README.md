@@ -4,7 +4,7 @@ A game made for the Global Game Jam 2020 following the theme 'repair'.
 
 # Download the game
 
-* [Github repository](https://github.com/Sandruski/Global-Game-Jam-2020)  
+* [Github repository](https://github.com/Sandruski/repairs-in-20s)  
 
 ## About the game
 
